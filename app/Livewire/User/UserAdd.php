@@ -23,7 +23,7 @@ class UserAdd extends Component
     public $riwayat = 0;
     public $pengeluaran = 0;
     public $toping = 0;
-    public $ukuran = 0;
+    public $Ukuran = 0;
 
     public function addUser(){
         $this->validate([
@@ -54,7 +54,7 @@ class UserAdd extends Component
             'riwayat' => $this->riwayat,
             'pengeluaran' => $this->pengeluaran,
             'toping' => $this->toping,
-            'ukuran' => $this->ukuran,
+            'Ukuran' => $this->Ukuran,
         ]);
 
         $this->dispatch('success', message: 'Admin Berhasil Ditambahkan');
@@ -72,7 +72,7 @@ class UserAdd extends Component
         $this->riwayat = 0;
         $this->pengeluaran = 0;
         $this->toping = 0;
-        $this->ukuran = 0;
+        $this->Ukuran = 0;
 
 
     }

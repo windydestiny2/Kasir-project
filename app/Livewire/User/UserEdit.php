@@ -24,7 +24,7 @@ class UserEdit extends Component
     public $riwayat = 0;
     public $pengeluaran = 0;
     public $toping = 0;
-    public $ukuran = 0;
+    public $Ukuran = 0;
 
     public function mount($users){
         $this->user_id = $users->id;
@@ -45,7 +45,7 @@ class UserEdit extends Component
         $this->riwayat = $users->riwayat;
         $this->pengeluaran = $users->pengeluaran;
         $this->toping = $users->toping;
-        $this->ukuran = $users->ukuran;
+        $this->Ukuran = $users->Ukuran;
 
         
     }
@@ -96,7 +96,7 @@ class UserEdit extends Component
             'riwayat' => $this->riwayat,
             'pengeluaran' => $this->pengeluaran,
             'toping' => $this->toping,
-            'ukuran' => $this->ukuran,
+            'Ukuran' => $this->Ukuran,
         ]);
 
         $notif = array(

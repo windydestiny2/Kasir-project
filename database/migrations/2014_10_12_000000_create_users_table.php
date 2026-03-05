@@ -31,7 +31,7 @@ return new class extends Migration
             $table->integer('riwayat')->nullable();
             $table->integer('pengeluaran')->nullable();
             $table->integer('toping')->nullable();
-            $table->integer('ukuran')->nullable();
+            $table->integer('Ukuran')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

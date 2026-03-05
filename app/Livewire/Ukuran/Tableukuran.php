@@ -2,11 +2,11 @@
 
 namespace App\Livewire\Ukuran;
 
-use App\Models\ukuran;
+use App\Models\Ukuran;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Tableukuran extends Component
+class TableUkuran extends Component
 {
     public $search = '';
     use WithPagination;
@@ -16,16 +16,16 @@ class Tableukuran extends Component
 
     public function render()
     {
-        $ukurans = ukuran::with('toping')
+        $Ukurans = Ukuran::with('toping')
         ->where('nama', 'like', '%' .$this->search.'%' )
         ->paginate(10);
-        return view('livewire.ukuran.tableukuran', compact('ukurans'));
+        return view('livewire.Ukuran.tableUkuran', compact('Ukurans'));
     }
 
     public function DeleteUkuran($id){
-        $ukuran = ukuran::findOrFail($id);
+        $Ukuran = Ukuran::findOrFail($id);
 
-        $ukuran->delete();
+        $Ukuran->delete();
         
         $this->dispatch('success', message: 'Berhasil Dihapus');
         $this->dispatch('UkuranHapus');

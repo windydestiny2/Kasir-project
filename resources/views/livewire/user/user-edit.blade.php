@@ -203,9 +203,9 @@
 
                                                     <fieldset class="py-2">
                                                         <div class="icheck-primary d-inline">
-                                                            <input type="checkbox" id="ukuran" wire:model="ukuran"
-                                                                 {{ $user->ukuran == 1 ? 'checked' : '' }}>
-                                                            <label for="ukuran">
+                                                            <input type="checkbox" id="Ukuran" wire:model="Ukuran"
+                                                                 {{ $user->Ukuran == 1 ? 'checked' : '' }}>
+                                                            <label for="Ukuran">
                                                                 Ukuran
                                                             </label>
                                                         </div>

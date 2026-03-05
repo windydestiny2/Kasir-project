@@ -59,7 +59,7 @@
                                     @if($user->toping == 1)
                                         <span class="badge btn-success">Toping</span>
                                     @endif
-                                    @if($user->ukuran == 1)
+                                    @if($user->Ukuran == 1)
                                         <span class="badge btn-primary">Ukuran</span>
                                     @endif
                                 </td>

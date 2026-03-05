@@ -15,8 +15,8 @@ class Cart extends Model
         return $this->belongsTo(Product::class, 'id_product', 'id');
     }
 
-    public function ukuran()
+    public function Ukuran()
     {
-        return $this->belongsTo(Ukuran::class, 'ukuran_id');
+        return $this->belongsTo(Ukuran::class, 'Ukuran_id');
     }
 }

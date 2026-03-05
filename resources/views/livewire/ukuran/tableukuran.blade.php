@@ -30,16 +30,16 @@
     
               <tbody>
     
-                @foreach ($ukurans as $key => $ukuran)
+                @foreach ($Ukurans as $key => $Ukuran)
                 <tr>
-                  <td>{{ $ukurans->firstItem() + $key }}</td>
-                  <td>{{ $ukuran->product->nm_produk }}</td>
-                  <td>{{ $ukuran->toping->name_toping }}</td>
-                  <td>{{ $ukuran->nama }}</td>
-                  <td>Rp {{ number_format($ukuran->harga, 0, ',','.') }}</td>
+                  <td>{{ $Ukurans->firstItem() + $key }}</td>
+                  <td>{{ $Ukuran->product->nm_produk }}</td>
+                  <td>{{ $Ukuran->toping->name_toping }}</td>
+                  <td>{{ $Ukuran->nama }}</td>
+                  <td>Rp {{ number_format($Ukuran->harga, 0, ',','.') }}</td>
                   <td>
-                    <a href="{{ route('edit.ukuran', $ukuran->id) }}" class="btn btn-warning">Edit</a>
-                    <button class="btn btn-danger" wire:click='DeleteUkuran({{ $ukuran->id }})'
+                    <a href="{{ route('edit.Ukuran', $Ukuran->id) }}" class="btn btn-warning">Edit</a>
+                    <button class="btn btn-danger" wire:click='DeleteUkuran({{ $Ukuran->id }})'
                       onclick="if(!confirm('Apakah Yakin Ingin Dihapus?')) event.stopImmediatePropagation()">Hapus</button>
                   </td>
                 </tr>
@@ -49,7 +49,7 @@
             </table>
 
             <div class="py-2">
-              <div>{{ $ukurans->links() }}</div>
+              <div>{{ $Ukurans->links() }}</div>
             </div>
           </div>
     

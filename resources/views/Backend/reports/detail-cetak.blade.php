@@ -122,19 +122,19 @@
                                         </td>
                                         <td>{{ $item->product->nm_produk }}</td>
                                         <td>{{ $item->product->kd_produk }}</td>
-                                        <td>{{ $item->ukuran?->toping?->name_toping ?? '-' }}</td>
-                                        <td>{{ $item->ukuran?->nama ?? '-' }}</td>
+                                        <td>{{ $item->Ukuran?->toping?->name_toping ?? '-' }}</td>
+                                        <td>{{ $item->Ukuran?->nama ?? '-' }}</td>
                                         <td>
-                                            @if ($item->ukuran)
-                                                Rp {{ number_format($item->ukuran->harga, 0, ',', '.') }}
+                                            @if ($item->Ukuran)
+                                                Rp {{ number_format($item->Ukuran->harga, 0, ',', '.') }}
                                             @else
                                                 -
                                             @endif
                                         </td>
                                         <td>{{ $item->qty }}</td>
                                         <td>
-                                            @if ($item->ukuran)
-                                                Rp {{ number_format($item->ukuran->harga * $item->qty, 0, ',', '.') }}
+                                            @if ($item->Ukuran)
+                                                Rp {{ number_format($item->Ukuran->harga * $item->qty, 0, ',', '.') }}
                                             @else
                                                 Rp {{ number_format($item->product->harga * $item->qty, 0, ',', '.') }}
                                             @endif

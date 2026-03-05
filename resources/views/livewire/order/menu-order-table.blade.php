@@ -1,5 +1,4 @@
 <div>
-  {{-- In work, do what you enjoy. --}}
   <div class="col-12">
 
     <!-- /.card -->

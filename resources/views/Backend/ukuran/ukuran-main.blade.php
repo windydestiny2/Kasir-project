@@ -23,7 +23,7 @@
     <section class="content">
       <div class="container-fluid">
         
-        @livewire('ukuran.TambahUkuran')
+        @livewire('Ukuran.TambahUkuran')
         {{-- <div class="row">
           <div class="col-md-12">
               <!-- general form elements -->
@@ -35,7 +35,7 @@
                   <!-- form start -->
                   
                   
-                  <form method="POST" action="{{ route('tambah.ukuran') }}" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('tambah.Ukuran') }}" enctype="multipart/form-data">
                     @csrf
                       <div class="card-body">
                           <div class="row">
@@ -89,7 +89,7 @@
   
         </div> --}}
 
-        @livewire('ukuran.Tableukuran')
+        @livewire('Ukuran.TableUkuran')
 
       </div>
     </section>

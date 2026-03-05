@@ -160,52 +160,41 @@
             </div>
         </div>
 
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Nomor</th>
-                                    <th>Tanggal</th>
-                                    <th>Jumlah</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-    
-                            <tbody>
-    
-                                @foreach ($Datapengeluaran as $key => $item)
-                                    <tr>
-                                        <td>{{ $Datapengeluaran->firstItem() + $key }}</td>
-                                    <td>{{ $item->tanggal }}</td>
-                                    <td>Rp {{ number_format($item->jumlah, 0, ',', '.') }}</td>
-                                    <td>{{ $item->keterangan }}</td>
-                                    <td>
-                                        <a href="{{ route('edit.Pengeluaran', $item->id) }}" class="btn btn-warning">Edit</a>
-                                        <button class="btn btn-danger" wire:click='DeletePengeluaran({{ $item->id }})'
-                                            onclick="if(!confirm('Apakah Yakin Ingin Dihapus?')) event.stopImmediatePropagation()">Hapus</button>
-                                    </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-    
-                        </table>
-    
-                        <div class="py-2">
-                            {{ $Datapengeluaran->links() }}
-                        </div>
-                    </div>
-    
-    
-                    
-    
-    
-                </div>
-            </div>
+        <!-- data pengeluaran -->
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title fw-bold">Table Pengeluaran</h5>
         </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>Tanggal</th>
+                            <th>Jumlah</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($Datapengeluaran as $key => $item)
+                            <tr>
+                                <td>{{ $Datapengeluaran->firstItem() + $key }}</td>
+                                <td>{{ $item->tanggal }}</td>
+                                <td>Rp {{ number_format($item->jumlah, 0, ',', '.') }}</td>
+                                <td>{{ $item->keterangan }}</td>
+                                <td>
+                                    <a href="{{ route('edit.Pengeluaran', $item->id) }}" class="btn btn-warning">Edit</a>
+                                    <button class="btn btn-danger" wire:click='DeletePengeluaran({{ $item->id }})'
+                                        onclick="if(!confirm('Apakah Yakin Ingin Dihapus?')) event.stopImmediatePropagation()">Hapus</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class=
         
 
 

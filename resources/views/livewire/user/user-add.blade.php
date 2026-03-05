@@ -41,7 +41,7 @@
                                                 <label for="password">Password<span class="text-danger">*</span></label>
                                                 <input type="password" wire:model='password' class="form-control @error('password')
                                                 is-invalid
-                                                @enderror" id="password" placeholder="Masukan password Product">
+                                                @enderror" id="password" placeholder="Masukan password">
                                                 @error('password')
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
@@ -87,7 +87,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="tentang">Tentang</label>
-                                                    <textarea class="form-control" id="tentang" placeholder="Alamat" wire:model="about"></textarea>
+                                                    <textarea class="form-control" id="tentang" placeholder="About you" wire:model="about"></textarea>
                                             </div>
                                         </div>                                      
                                     </div>
@@ -214,9 +214,9 @@
                                                     </fieldset>
                                                     <fieldset class="py-2">
                                                         <div class="icheck-primary d-inline">
-                                                            <input type="checkbox" id="ukuran" wire:model="ukuran"
+                                                            <input type="checkbox" id="Ukuran" wire:model="Ukuran"
                                                                 value="1">
-                                                            <label for="ukuran">
+                                                            <label for="Ukuran">
                                                                 Ukuran
                                                             </label>
                                                         </div>

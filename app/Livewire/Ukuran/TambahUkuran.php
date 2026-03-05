@@ -4,7 +4,7 @@ namespace App\Livewire\Ukuran;
 
 use App\Models\Product;
 use App\Models\toping;
-use App\Models\ukuran;
+use App\Models\Ukuran;
 use Livewire\Component;
 
 class TambahUkuran extends Component
@@ -57,6 +57,6 @@ class TambahUkuran extends Component
     
     public function render()
     {   
-        return view('livewire.ukuran.tambah-ukuran');
+        return view('livewire.Ukuran.tambah-Ukuran');
     }
 }

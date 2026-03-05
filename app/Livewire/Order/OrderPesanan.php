@@ -7,7 +7,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\toping;
-use App\Models\ukuran;
+use App\Models\Ukuran;
 use App\Models\User;
 use GuzzleHttp\Handler\Proxy;
 use Illuminate\Support\Facades\Auth;
@@ -29,14 +29,14 @@ class OrderPesanan extends Component
     public $totalBayar = '';
     public $kembalian = 0;
     public $catatan;
-
+public $metodePembayaran = 'cash';
     public $qrCode; 
 
     
     // dari blade
     public $myToping;
     public $toping = [];      // toping[cart_id]
-    public $ukuran = [];      // ukuran[cart_id]
+    public $Ukuran = [];      // Ukuran[cart_id]
     public $myUkuran = [];    // myUkuran[cart_id]
     public $hargaUkuran = []; // hargaUkuran[cart_id]
 
@@ -46,32 +46,32 @@ class OrderPesanan extends Component
         // $key adalah cart_id
         $cartId = $key;
         $this->myUkuran[$cartId] = \App\Models\Ukuran::where('id_toping', $value)->get();
-        $this->ukuran[$cartId] = null;
+        $this->Ukuran[$cartId] = null;
         $this->hargaUkuran[$cartId] = 0;
 
         $cart = \App\Models\Cart::find($cartId);
         if ($cart) {
             $cart->price = 0;
-            $cart->ukuran_id = null;
+            $cart->Ukuran_id = null;
             $cart->save();
         }
 
         $this->hitungTotal();
     }
 
-    // pilih ukuran sesuai id
+    // pilih Ukuran sesuai id
     public function updatedUkuran($value, $cartId)
     {
-        $ukuran = Ukuran::find($value);
-        if ($ukuran) {
+        $Ukuran = Ukuran::find($value);
+        if ($Ukuran) {
             $cart = Cart::find($cartId);
             if ($cart) {
-                $cart->price = $ukuran->harga;
-                $cart->ukuran_id = $ukuran->id;
+                $cart->price = $Ukuran->harga;
+                $cart->Ukuran_id = $Ukuran->id;
                 $cart->save();
 
                 // Set harga untuk input tampilannya
-                $this->hargaUkuran[$cartId] = $ukuran->harga;
+                $this->hargaUkuran[$cartId] = $Ukuran->harga;
 
                 $this->hitungTotal();
             }
@@ -123,12 +123,12 @@ class OrderPesanan extends Component
         if ($cart && $cart->qty < $cart->product->stok) {
             $cart->increment('qty');
 
-            // Ambil harga dari ukuran yang dipilih per cart ID
-            $ukuranId = $this->ukuran[$cartId] ?? null;
-            if ($ukuranId) {
-                $ukuran = \App\Models\Ukuran::find($ukuranId);
-                if ($ukuran) {
-                    $cart->price = $ukuran->harga;
+            // Ambil harga dari Ukuran yang dipilih per cart ID
+            $UkuranId = $this->Ukuran[$cartId] ?? null;
+            if ($UkuranId) {
+                $Ukuran = \App\Models\Ukuran::find($UkuranId);
+                if ($Ukuran) {
+                    $cart->price = $Ukuran->harga;
                 }
             }
 
@@ -143,12 +143,12 @@ class OrderPesanan extends Component
         if ($cart && $cart->qty > 1) {
             $cart->decrement('qty');
 
-            // Ambil harga dari ukuran yang dipilih per cart ID
-            $ukuranId = $this->ukuran[$cartId] ?? null;
-            if ($ukuranId) {
-                $ukuran = \App\Models\Ukuran::find($ukuranId);
-                if ($ukuran) {
-                    $cart->price = $ukuran->harga;
+            // Ambil harga dari Ukuran yang dipilih per cart ID
+            $UkuranId = $this->Ukuran[$cartId] ?? null;
+            if ($UkuranId) {
+                $Ukuran = \App\Models\Ukuran::find($UkuranId);
+                if ($Ukuran) {
+                    $cart->price = $Ukuran->harga;
                 }
             }
 
@@ -168,7 +168,7 @@ class OrderPesanan extends Component
 
         foreach ($carts as $cart) {
             $this->toping[$cart->id] = null;
-            $this->ukuran[$cart->id] = null;
+            $this->Ukuran[$cart->id] = null;
             $this->myUkuran[$cart->id] = [];
             $this->hargaUkuran[$cart->id] = 0;
         }
@@ -181,11 +181,11 @@ class OrderPesanan extends Component
         $carts = Cart::where('id_user', Auth::id())->get();
 
         $this->totalBelanja = $carts->sum(function ($cart) {
-            // Jika ukuran dipilih, gunakan harga ukuran
-            if ($cart->ukuran) {
-                return $cart->qty * $cart->ukuran->harga;
+            // Jika Ukuran dipilih, gunakan harga Ukuran
+            if ($cart->Ukuran) {
+                return $cart->qty * $cart->Ukuran->harga;
             }
-            // Jika ukuran tidak dipilih, gunakan harga produk biasa
+            // Jika Ukuran tidak dipilih, gunakan harga produk biasa
             return $cart->qty * $cart->price;
         });
 
@@ -233,7 +233,7 @@ class OrderPesanan extends Component
             'status' => $this->catatan,
         ]);
 
-        $carts = Cart::with(['product', 'ukuran'])->where('id_user', Auth::id())->get();
+        $carts = Cart::with(['product', 'Ukuran'])->where('id_user', Auth::id())->get();
 
         foreach ($carts as $cart) {
             $product = $cart->product;
@@ -247,8 +247,8 @@ class OrderPesanan extends Component
                     'qty' => $cart->qty,
                     'price' => $cart->price,
                     'total' => $cart->qty * $cart->price,
-                    'ukuran_id' => $cart->ukuran_id, // dari cart
-                    'toping_id' => optional($cart->ukuran)->id_toping, // ambil dari relasi ukuran
+                    'Ukuran_id' => $cart->Ukuran_id, // dari cart
+                    'toping_id' => optional($cart->Ukuran)->id_toping, // ambil dari relasi Ukuran
                 ]);
 
                 $cart->delete();
@@ -321,12 +321,12 @@ class OrderPesanan extends Component
 
         $this->hitungTotal();
 
-        // $toping = toping::with('ukuran')->get();
+        // $toping = toping::with('Ukuran')->get();
         if ($this->myToping) {
             // dd($this->toping);
-            $dataukuran = toping::where('id', $this->myToping)->first();
+            $dataUkuran = toping::where('id', $this->myToping)->first();
         }else{
-            $dataukuran = NULL;
+            $dataUkuran = NULL;
         }
 
         $products = Product::where('nm_produk', 'like', '%'.$this->search.'%')->paginate(10);
@@ -335,7 +335,7 @@ class OrderPesanan extends Component
                 ->where('id_user', Auth::id())
                 ->latest()
                 ->get(),
-                'dataukuran' => $dataukuran,
+                'dataUkuran' => $dataUkuran,
         ]);
     }
 }

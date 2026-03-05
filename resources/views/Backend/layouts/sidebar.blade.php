@@ -85,7 +85,7 @@
 
           @if($users->product == 1)
           <li class="nav-item">
-            <a href="{{ route('view.ukuran') }}" class="nav-link {{ ($title === "Ukuran") ? 'active' : '' }}">
+            <a href="{{ route('view.Ukuran') }}" class="nav-link {{ ($title === "Ukuran") ? 'active' : '' }}">
               <i class="nav-icon fas fa-ruler"></i>
               <p>
                 Ukuran Toping

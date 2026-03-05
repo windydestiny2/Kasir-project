@@ -4,7 +4,7 @@ namespace App\Livewire\Ukuran;
 
 use App\Models\Product;
 use App\Models\toping;
-use App\Models\ukuran;
+use App\Models\Ukuran;
 use Livewire\Component;
 
 class UkuranEdit extends Component
@@ -16,17 +16,17 @@ class UkuranEdit extends Component
     public $myToping;
 
     public $nama, $harga;
-    public $id_ukuran;
+    public $id_Ukuran;
 
-    public function mount($ukurans){
+    public function mount($Ukurans){
         $this->product = Product::all();
-        $this->id_ukuran = $ukurans->id;
-        $this->nama = $ukurans->nama;
-        $this->harga = $ukurans->harga;
-        $this->myToping = $ukurans->id_toping;
-        $this->myProduct = $ukurans->id_product;
+        $this->id_Ukuran = $Ukurans->id;
+        $this->nama = $Ukurans->nama;
+        $this->harga = $Ukurans->harga;
+        $this->myToping = $Ukurans->id_toping;
+        $this->myProduct = $Ukurans->id_product;
 
-        $this->topings = toping::where('id_product', $ukurans->id_product)->get();
+        $this->topings = toping::where('id_product', $Ukurans->id_product)->get();
     }
 
     public function updatedMyProduct($value)
@@ -43,9 +43,9 @@ class UkuranEdit extends Component
             'harga' => 'required|numeric',
         ]);
 
-        $ukuran = ukuran::findOrFail($this->id_ukuran);
+        $Ukuran = Ukuran::findOrFail($this->id_Ukuran);
 
-        $ukuran->update([
+        $Ukuran->update([
             'id_product' => $this->myProduct,
             'id_toping' => $this->myToping,
             'nama' => $this->nama,
@@ -57,13 +57,13 @@ class UkuranEdit extends Component
             'alert-type' => 'success'
         );
 
-        return redirect()->route('view.ukuran')->with($notif);
+        return redirect()->route('view.Ukuran')->with($notif);
     }
 
 
 
     public function render()
     {
-        return view('livewire.ukuran.ukuran-edit');
+        return view('livewire.Ukuran.Ukuran-edit');
     }
 }

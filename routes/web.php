@@ -49,9 +49,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/toping/edit/{id}', [TopingController::class, 'editToping'])->name('edit.toping');
 
 
-    // ukuran
-    Route::get('/ukuran', [UkuranController::class, 'viewUkuran'])->name('view.ukuran');
-    Route::get('/edit/ukuran/{id}', [UkuranController::class, 'editUkuran'])->name('edit.ukuran');
+    // Ukuran
+    Route::get('/Ukuran', [UkuranController::class, 'viewUkuran'])->name('view.Ukuran');
+    Route::get('/edit/Ukuran/{id}', [UkuranController::class, 'editUkuran'])->name('edit.Ukuran');
 
     Route::get('/toping/ajax/{toping_id}', [OrderPesanan::class, 'GetToping']);
 

@@ -12,7 +12,7 @@ class toping extends Model
         return $this->belongsTo(Product::class, 'id_product', 'id');
     }
 
-    public function ukuran(){
-        return $this->hasMany(ukuran::class, 'id_toping', 'id');
+    public function Ukuran(){
+        return $this->hasMany(Ukuran::class, 'id_toping', 'id');
     }
 }

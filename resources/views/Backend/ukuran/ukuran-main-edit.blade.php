@@ -23,7 +23,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        @livewire('ukuran.UkuranEdit', ['ukurans' => $ukurans])
+        @livewire('Ukuran.UkuranEdit', ['Ukurans' => $Ukurans])
         <!-- /.row -->
         
       </div><!-- /.container-fluid -->

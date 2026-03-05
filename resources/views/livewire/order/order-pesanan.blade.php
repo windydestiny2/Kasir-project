@@ -56,7 +56,7 @@
                     {{-- Ukuran --}}
                     <td colspan="3">
                       <label>Ukuran</label>
-                      <select class="form-control" wire:model.live="ukuran.{{ $cart['id'] }}" @if(empty($myUkuran[$cart['id']])) disabled @endif>
+                      <select class="form-control" wire:model.live="Ukuran.{{ $cart['id'] }}" @if(empty($myUkuran[$cart['id']])) disabled @endif>
                         <option value="">Pilih Ukuran</option>
                         @foreach ($myUkuran[$cart['id']] ?? [] as $item)
                           <option value="{{ $item->id }}">{{ $item->nama }} - Rp {{ number_format($item->harga, 0, ',', '.') }}</option>
@@ -89,6 +89,38 @@
                     <input type="text" class="form-control" id="totalBayar" oninput="fungsi(this)" wire:model.live="totalBayar">
                   </th>
                 </tr>
+                <tr>
+
+                <th colspan="3">Metode Pembayaran</th>
+                <th colspan="3">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" wire:model="metodePembayaran" id="cash" value="cash" checked>
+                    <label class="form-check-label" for="cash">Cash</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" wire:model="metodePembayaran" id="qris" value="qris">
+                    <label class="form-check-label" for="qris">QRIS</label>
+                  </div>
+                </th>
+              </tr>
+              <tr x-data="{ showQRIS: @entangle('metodePembayaran').defer === 'qris' }">
+                <td colspan="6" class="text-center">
+                  @if($metodePembayaran === 'qris')
+                    <button type="button" class="btn btn-success" onclick="document.getElementById('qris-modal').classList.remove('d-none')">Tampilkan QRIS</button>
+                  @endif
+                </td>
+              </tr>
+
+<div id="qris-modal" class="d-none" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:30px;border-radius:10px;position:relative;">
+    <button type="button" class="btn btn-danger" style="position:absolute;top:10px;right:10px;" onclick="document.getElementById('qris-modal').classList.add('d-none')">X</button>
+    <h4 class="mb-3 text-center">Scan QRIS untuk Pembayaran</h4>
+    <img src="{{ asset('asset/dist/img/qris-barcode.jpg') }}" alt="QRIS Barcode" style="max-width:300px;">
+    <p class="mt-2 text-center">Silakan scan barcode QRIS di atas untuk pembayaran.</p>
+  </div>
+</div>
+
+
                 <tr>
                   <th colspan="3">Kembalian</th>
                   <th colspan="3">Rp {{ number_format($this->kembalian, 0, ',', '.') }}</th>
@@ -188,9 +220,9 @@
                   type: "GET",
                   dataType: "json",
                   success: function(data){
-                      var d = $('select[name="ukuran_id"]').empty();
+                      var d = $('select[name="Ukuran_id"]').empty();
                       $.each(data, function (key, value){
-                          $('select[name="ukuran_id"]').append(
+                          $('select[name="Ukuran_id"]').append(
                               '<option value="' + value.id + '">' + value
                                   .nama + '</option>'
                                   );
