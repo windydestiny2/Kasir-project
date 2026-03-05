@@ -21,6 +21,11 @@ class OrderItem extends Model
 
     public function Ukuran()
     {
-        return $this->belongsTo(Ukuran::class, 'Ukuran_id');
+        return $this->belongsTo(Ukuran::class, 'ukuran_id');
+    }
+
+    public function toping()
+    {
+        return $this->belongsTo(Toping::class, 'toping_id');
     }
 }

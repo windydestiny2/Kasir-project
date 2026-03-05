@@ -23,7 +23,7 @@ class ReportController extends Controller
 
     // tampilan detail riwayat dan laporan
     public function detailReport($id){
-        $orders = Order::with(['orderitem.product', 'orderitem.Ukuran.toping', 'user'])->find($id);
+        $orders = Order::with(['orderitem.product', 'orderitem.Ukuran.toping', 'orderitem.toping', 'user'])->find($id);
         return view('Backend.reports.detail-reports', compact('orders'), ['title' => 'detail report']);
     }
 
@@ -31,7 +31,7 @@ class ReportController extends Controller
     public function cetakReports(Request $request){
         $search = $request->input('search');
 
-        $orders = Order::with(['orderitem.product', 'user'])
+        $orders = Order::with(['orderitem.product', 'orderitem.Ukuran.toping', 'orderitem.toping', 'user'])
         ->when($search, function ($query, $search){
             $query->whereDate('created_at', 'like', '%' . $search . '%');
         })->get();
@@ -49,7 +49,7 @@ class ReportController extends Controller
 
     // cetak detail riwayat dan order
     public function detailCetak($id){
-        $orders = Order::with(['orderitem.product', 'orderitem.Ukuran.toping', 'user'])->find($id);
+        $orders = Order::with(['orderitem.product', 'orderitem.Ukuran.toping', 'orderitem.toping', 'user'])->find($id);
 
         return view('Backend.reports.detail-cetak', compact('orders'));
 
