@@ -1,0 +1,37 @@
+2026-03-05 15:25:31,601 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-05 15:25:31,601 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 15:25:31,985 - INFO -  * Restarting with watchdog (fsevents)
+2026-03-05 15:25:32,451 - WARNING -  * Debugger is active!
+2026-03-05 15:25:32,459 - INFO -  * Debugger PIN: 488-255-891
+2026-03-05 15:25:45,249 - INFO - 127.0.0.1 - - [05/Mar/2026 15:25:45] "[35m[1mGET /models/status HTTP/1.1[0m" 500 -
+2026-03-05 15:26:18,950 - INFO - 127.0.0.1 - - [05/Mar/2026 15:26:18] "[35m[1mGET /models/status HTTP/1.1[0m" 500 -
+2026-03-05 15:26:18,959 - INFO - 127.0.0.1 - - [05/Mar/2026 15:26:18] "[33mGET /predict/menu-recommendations HTTP/1.1[0m" 404 -
+2026-03-05 15:26:18,963 - INFO - 127.0.0.1 - - [05/Mar/2026 15:26:18] "[35m[1mGET /predict/revenue HTTP/1.1[0m" 500 -
+2026-03-05 15:26:18,967 - INFO - 127.0.0.1 - - [05/Mar/2026 15:26:18] "[35m[1mGET /predict/seasonal-patterns HTTP/1.1[0m" 500 -
+2026-03-05 15:26:33,530 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-03-05 15:26:34,013 - INFO -  * Restarting with watchdog (fsevents)
+2026-03-05 15:26:34,999 - WARNING -  * Debugger is active!
+2026-03-05 15:26:35,007 - INFO -  * Debugger PIN: 488-255-891
+2026-03-05 15:28:02,260 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-03-05 15:28:02,268 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-03-05 15:28:02,722 - INFO -  * Restarting with watchdog (fsevents)
+2026-03-05 15:28:03,308 - WARNING -  * Debugger is active!
+2026-03-05 15:28:03,315 - INFO -  * Debugger PIN: 488-255-891
+2026-03-05 15:28:12,024 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:12] "GET /models/status HTTP/1.1" 200 -
+2026-03-05 15:28:12,027 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:12] "[33mGET /predict/menu-recommendations HTTP/1.1[0m" 404 -
+2026-03-05 15:28:12,030 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:12] "GET /predict/revenue HTTP/1.1" 200 -
+2026-03-05 15:28:12,031 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:12] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-03-05 15:28:26,116 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:26] "GET /models/status HTTP/1.1" 200 -
+2026-03-05 15:28:26,119 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:26] "[33mGET /predict/menu-recommendations HTTP/1.1[0m" 404 -
+2026-03-05 15:28:26,121 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-03-05 15:28:26,123 - INFO - 127.0.0.1 - - [05/Mar/2026 15:28:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-03-05 15:31:24,087 - INFO - 127.0.0.1 - - [05/Mar/2026 15:31:24] "GET /models/status HTTP/1.1" 200 -
+2026-03-05 15:31:24,089 - INFO - 127.0.0.1 - - [05/Mar/2026 15:31:24] "[33mGET /predict/menu-recommendations HTTP/1.1[0m" 404 -
+2026-03-05 15:31:24,091 - INFO - 127.0.0.1 - - [05/Mar/2026 15:31:24] "GET /predict/revenue HTTP/1.1" 200 -
+2026-03-05 15:31:24,092 - INFO - 127.0.0.1 - - [05/Mar/2026 15:31:24] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-03-05 15:32:39,994 - INFO - 127.0.0.1 - - [05/Mar/2026 15:32:39] "GET /health HTTP/1.1" 200 -
+2026-03-05 15:32:45,980 - INFO - 127.0.0.1 - - [05/Mar/2026 15:32:45] "GET /models/status HTTP/1.1" 200 -
+2026-03-05 15:32:45,986 - INFO - 127.0.0.1 - - [05/Mar/2026 15:32:45] "[33mGET /predict/menu-recommendations HTTP/1.1[0m" 404 -
+2026-03-05 15:32:45,997 - INFO - 127.0.0.1 - - [05/Mar/2026 15:32:45] "GET /predict/revenue HTTP/1.1" 200 -
+2026-03-05 15:32:45,998 - INFO - 127.0.0.1 - - [05/Mar/2026 15:32:45] "GET /predict/seasonal-patterns HTTP/1.1" 200 -

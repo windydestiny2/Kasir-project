@@ -79,9 +79,23 @@ Route::middleware('auth')->group(function(){
     // cetak pengeluaran
     Route::get('/cetakPengeluaran', [ReportController::class, 'cetakPengeluaran'])->name('cetak.pengeluaran');
 
-
 });
 
+
+// ML Dashboard (temporarily without auth for testing)
+Route::prefix('ml')->group(function() {
+    Route::get('/dashboard', [App\Http\Controllers\MLController::class, 'dashboard'])->name('ml.dashboard');
+
+    // Training routes
+    Route::post('/train/menu-recommendation', [App\Http\Controllers\MLController::class, 'trainMenuRecommendation'])->name('ml.train.menu');
+    Route::post('/train/revenue-forecasting', [App\Http\Controllers\MLController::class, 'trainRevenueForecasting'])->name('ml.train.revenue');
+    Route::post('/train/seasonal-pattern', [App\Http\Controllers\MLController::class, 'trainSeasonalPattern'])->name('ml.train.seasonal');
+
+    // Prediction routes (AJAX)
+    Route::get('/predict/menu-recommendations', [App\Http\Controllers\MLController::class, 'getMenuRecommendations'])->name('ml.predict.menu');
+    Route::get('/predict/revenue', [App\Http\Controllers\MLController::class, 'getRevenuePrediction'])->name('ml.predict.revenue');
+    Route::get('/predict/seasonal-patterns', [App\Http\Controllers\MLController::class, 'getSeasonalPatterns'])->name('ml.predict.seasonal');
+});
 
 // Route::get('/product', function(){
 //     return view('Backend.Product.product-main', ['title' => 'Product'])->name('product-main');

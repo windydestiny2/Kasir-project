@@ -142,6 +142,17 @@
           </li>
           @endif
 
+          @if($users->admin == true)
+          <li class="nav-item">
+            <a href="{{ route('ml.dashboard') }}" class="nav-link {{ ($title === "ML Dashboard") ? 'active' : '' }}">
+              <i class="nav-icon fas fa-brain"></i>
+              <p>
+                ML Dashboard
+              </p>
+            </a>
+          </li>
+          @endif
+
           
         
 
