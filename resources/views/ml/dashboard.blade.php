@@ -165,6 +165,14 @@
                                     </button>
                                 </div>
                             </div>
+                            <div class="mt-3">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="auto-refresh-toggle" checked>
+                                    <label class="custom-control-label" for="auto-refresh-toggle">
+                                        <small>Auto-refresh predictions every 30 seconds</small>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -184,10 +192,10 @@
                                             <div class="list-group">
                                                 @foreach($menuRecommendations['recommendations'] as $item)
                                                     <div class="list-group-item">
-                                                        <strong>{{ $item['product_name'] ?? 'N/A' }}</strong>
+                                                        <strong>{{ $item['menu_name'] ?? 'N/A' }}</strong>
                                                         <br>
                                                         <small class="text-muted">
-                                                            Confidence: {{ isset($item['confidence']) ? number_format($item['confidence'] * 100, 1) : 'N/A' }}%
+                                                            Confidence: {{ isset($item['popularity_score']) ? number_format($item['popularity_score'], 1) : 'N/A' }}%
                                                         </small>
                                                     </div>
                                                 @endforeach
@@ -237,23 +245,32 @@
                                     </h5>
                                 </div>
                                 <div class="card-body" id="seasonal-patterns">
-                                    @if($seasonalPatterns && isset($seasonalPatterns['status']) && ($seasonalPatterns['status'] === 'success' || isset($seasonalPatterns['patterns'])))
-                                        @if(isset($seasonalPatterns['patterns']) && is_array($seasonalPatterns['patterns']))
-                                            <div class="list-group">
-                                                @foreach($seasonalPatterns['patterns'] as $pattern)
-                                                    <div class="list-group-item">
-                                                        <strong>{{ $pattern['period'] ?? 'N/A' }}</strong>
-                                                        <br>
-                                                        <small class="text-muted">
-                                                            Trend: {{ $pattern['trend'] ?? 'N/A' }}
-                                                            ({{ isset($pattern['confidence']) ? number_format($pattern['confidence'] * 100, 1) : 'N/A' }}%)
-                                                        </small>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        @else
-                                            <p class="text-muted">Belum ada pola tersedia</p>
-                                        @endif
+                                    @if($seasonalPatterns && isset($seasonalPatterns['status']) && $seasonalPatterns['status'] === 'success')
+                                        <div class="mb-3">
+                                            @if(isset($seasonalPatterns['best_performing_day']))
+                                                <div class="alert alert-success">
+                                                    <strong>Best Performing Day:</strong> {{ $seasonalPatterns['best_performing_day']['day_name'] ?? 'N/A' }}
+                                                    <br>
+                                                    <small>Orders: {{ $seasonalPatterns['best_performing_day']['total_orders'] ?? 'N/A' }}, Revenue: Rp {{ number_format($seasonalPatterns['best_performing_day']['total_revenue'] ?? 0, 0, ',', '.') }}</small>
+                                                </div>
+                                            @endif
+
+                                            @if(isset($seasonalPatterns['today_analysis']))
+                                                <div class="alert alert-info">
+                                                    <strong>Today's Analysis:</strong> {{ $seasonalPatterns['today_analysis']['day_name'] ?? 'N/A' }}
+                                                    <br>
+                                                    <small>Expected Orders: {{ $seasonalPatterns['today_analysis']['expected_orders'] ?? 'N/A' }}, Expected Revenue: Rp {{ number_format($seasonalPatterns['today_analysis']['expected_revenue'] ?? 0, 0, ',', '.') }}</small>
+                                                </div>
+                                            @endif
+
+                                            @if(isset($seasonalPatterns['trend_analysis']))
+                                                <div class="alert alert-warning">
+                                                    <strong>Trend Analysis:</strong>
+                                                    <br>
+                                                    <small>Direction: {{ $seasonalPatterns['trend_analysis']['trend_direction'] ?? 'N/A' }}, Change: {{ number_format($seasonalPatterns['trend_analysis']['trend_percentage'] ?? 0, 1) }}%</small>
+                                                </div>
+                                            @endif
+                                        </div>
                                     @else
                                         <p class="text-muted">Tidak ada data pola</p>
                                     @endif
@@ -333,7 +350,11 @@ $(document).ready(function() {
     });
 
     // Auto refresh predictions every 30 seconds
-    setInterval(function() {
+    let autoRefreshInterval = setInterval(function() {
+        if (!$('#auto-refresh-toggle').is(':checked')) {
+            return; // Skip if auto-refresh is disabled
+        }
+
         // Refresh menu recommendations
         $.get('/ml/predict/menu-recommendations', function(data) {
             if (data.status === 'success' && data.recommendations) {
@@ -347,37 +368,64 @@ $(document).ready(function() {
                 html += '</div>';
                 $('#menu-recommendations').html(html);
             }
+        }).fail(function() {
+            console.log('Failed to refresh menu recommendations');
         });
 
         // Refresh revenue prediction
         $.get('/ml/predict/revenue', function(data) {
             if (data.status === 'success' && data.prediction) {
                 let html = '<div class="text-center">' +
-                          '<h2 class="text-success">Rp ' + data.prediction.toLocaleString('id-ID') + '</h2>' +
+                          '<h2 class="text-success">Rp ' + data.prediction.predicted_revenue.toLocaleString('id-ID') + '</h2>' +
                           '<p class="text-muted">Prediksi Revenue Hari Ini</p>';
-                if (data.confidence) {
-                    html += '<small>Confidence: ' + (data.confidence * 100).toFixed(1) + '%</small>';
+                if (data.prediction.confidence_interval) {
+                    html += '<small>Confidence Interval: Rp ' + data.prediction.confidence_interval.lower.toLocaleString('id-ID') + ' - Rp ' + data.prediction.confidence_interval.upper.toLocaleString('id-ID') + '</small>';
                 }
                 html += '</div>';
                 $('#revenue-prediction').html(html);
             }
+        }).fail(function() {
+            console.log('Failed to refresh revenue prediction');
         });
 
         // Refresh seasonal patterns
         $.get('/ml/predict/seasonal-patterns', function(data) {
-            if (data.status === 'success' && data.patterns) {
-                let html = '<div class="list-group">';
-                data.patterns.forEach(function(pattern) {
-                    html += '<div class="list-group-item">' +
-                            '<strong>' + pattern.period + '</strong><br>' +
-                            '<small class="text-muted">Trend: ' + pattern.trend + ' (' + (pattern.confidence * 100).toFixed(1) + '%)</small>' +
+            if (data.status === 'success') {
+                let html = '<div class="mb-3">';
+                if (data.best_performing_day) {
+                    html += '<div class="alert alert-success">' +
+                            '<strong>Best Performing Day:</strong> ' + data.best_performing_day.day_name +
+                            '<br><small>Orders: ' + data.best_performing_day.total_orders + ', Revenue: Rp ' + data.best_performing_day.total_revenue.toLocaleString('id-ID') + '</small>' +
                             '</div>';
-                });
+                }
+                if (data.today_analysis) {
+                    html += '<div class="alert alert-info">' +
+                            '<strong>Today\'s Analysis:</strong> ' + data.today_analysis.day_name +
+                            '<br><small>Expected Orders: ' + data.today_analysis.expected_orders + ', Expected Revenue: Rp ' + data.today_analysis.expected_revenue.toLocaleString('id-ID') + '</small>' +
+                            '</div>';
+                }
+                if (data.trend_analysis) {
+                    html += '<div class="alert alert-warning">' +
+                            '<strong>Trend Analysis:</strong>' +
+                            '<br><small>Direction: ' + data.trend_analysis.trend_direction + ', Change: ' + data.trend_analysis.trend_percentage.toFixed(1) + '%</small>' +
+                            '</div>';
+                }
                 html += '</div>';
                 $('#seasonal-patterns').html(html);
             }
+        }).fail(function() {
+            console.log('Failed to refresh seasonal patterns');
         });
     }, 30000); // 30 seconds
+
+    // Handle auto-refresh toggle
+    $('#auto-refresh-toggle').change(function() {
+        if ($(this).is(':checked')) {
+            toastr.info('Auto-refresh enabled');
+        } else {
+            toastr.info('Auto-refresh disabled');
+        }
+    });
 });
 </script>
 

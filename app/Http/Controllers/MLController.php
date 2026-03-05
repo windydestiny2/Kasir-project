@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class MLController extends Controller
 {
-    private $mlApiUrl = 'http://127.0.0.1:5002';
+    private $mlApiUrl = 'http://127.0.0.1:5003';
 
     /**
      * Display ML Dashboard

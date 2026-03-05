@@ -467,6 +467,13 @@ def predict_revenue():
     result = ml_service.predict_revenue(day_of_week, expected_orders)
     return jsonify(result)
 
+@app.route('/predict/menu-recommendations', methods=['GET'])
+def predict_menu_recommendations():
+    """Predict menu recommendations for today or specified day"""
+    day_of_week = request.args.get('day_of_week', type=int)
+    result = ml_service.predict_menu_recommendations(day_of_week)
+    return jsonify(result)
+
 @app.route('/train/seasonal-pattern', methods=['POST'])
 def train_seasonal_pattern():
     """Train seasonal pattern detection model"""
