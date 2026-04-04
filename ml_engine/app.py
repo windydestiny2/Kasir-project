@@ -98,13 +98,13 @@ class MLService:
             if df.empty:
                 return {"status": "error", "message": "No training data available"}
 
-            # Group by day of week and menu to get popularity
-            menu_popularity = df.groupby(['day_of_week', 'menu_name']).agg({
+            # Group by day of week + menu + topping + ukuran to get popularity
+            menu_popularity = df.groupby(['day_of_week', 'menu_name', 'topping', 'ukuran']).agg({
                 'order_id': 'count',
                 'total': 'sum'
             }).reset_index()
 
-            menu_popularity.columns = ['day_of_week', 'menu_name', 'order_count', 'total_revenue']
+            menu_popularity.columns = ['day_of_week', 'menu_name', 'topping', 'ukuran', 'order_count', 'total_revenue']
 
             # Calculate popularity score
             menu_popularity['popularity_score'] = (
@@ -153,9 +153,18 @@ class MLService:
                 # Fallback to overall popularity
                 day_data = model_data['menu_popularity']
 
+            # Compute percent share for kitchen/stok planning
+            total_orders = day_data['order_count'].sum() if not day_data.empty else 0
+
             recommendations = day_data.nlargest(3, 'popularity_score')[
-                ['menu_name', 'order_count', 'total_revenue', 'popularity_score']
-            ].to_dict('records')
+                ['menu_name', 'topping', 'ukuran', 'order_count', 'total_revenue', 'popularity_score']
+            ].copy()
+            if total_orders > 0:
+                recommendations['percent'] = (recommendations['order_count'] / total_orders) * 100
+            else:
+                recommendations['percent'] = 0
+
+            recommendations = recommendations.to_dict('records')
 
             return {
                 "status": "success",
@@ -175,10 +184,13 @@ class MLService:
             if df.empty:
                 return {"status": "error", "message": "No training data available"}
 
+            # Use unique orders to avoid double-counting when order has multiple items
+            orders = df.drop_duplicates(subset=['order_id'])
+
             # Aggregate daily revenue
-            daily_revenue = df.groupby('order_date').agg({
+            daily_revenue = orders.groupby('order_date').agg({
                 'total': 'sum',
-                'order_id': 'nunique'  # unique orders per day
+                'order_id': 'nunique'  # unique orders per day (should be 1 per order_id)
             }).reset_index()
 
             daily_revenue.columns = ['date', 'total_revenue', 'order_count']
@@ -197,17 +209,26 @@ class MLService:
             X = daily_revenue[['day_of_week', 'order_count']]
             y = daily_revenue['total_revenue']
 
-            # Split data
+            # Split data for evaluation (not for final model)
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-            # Train model
+            # Train model on training subset for evaluation
             model = LinearRegression()
             model.fit(X_train, y_train)
 
-            # Evaluate
+            # Evaluate on holdout set
             y_pred = model.predict(X_test)
             mse = mean_squared_error(y_test, y_pred)
             r2 = r2_score(y_test, y_pred)
+
+            # Retrain on full dataset for stable predictions
+            model_full = LinearRegression()
+            model_full.fit(X, y)
+            model = model_full
+
+            # Compute additional training statistics to support weekly/monthly forecasting
+            avg_orders_by_dow = daily_revenue.groupby('day_of_week')['order_count'].mean().to_dict()
+            avg_order_count = daily_revenue['order_count'].mean()
 
             # Save model
             model_data = {
@@ -221,7 +242,9 @@ class MLService:
                     'avg_revenue': daily_revenue['total_revenue'].mean(),
                     'max_revenue': daily_revenue['total_revenue'].max(),
                     'min_revenue': daily_revenue['total_revenue'].min(),
-                    'total_days': len(daily_revenue)
+                    'total_days': len(daily_revenue),
+                    'avg_order_count': avg_order_count,
+                    'avg_orders_by_day_of_week': avg_orders_by_dow
                 }
             }
 
@@ -253,17 +276,43 @@ class MLService:
             if day_of_week is None:
                 day_of_week = datetime.now().weekday() + 1
 
+            def _get_expected_orders(dow):
+                stats = model_data['training_data_stats']
+                return stats.get('avg_orders_by_day_of_week', {}).get(dow, stats.get('avg_order_count', 0))
+
             if expected_orders is None:
-                # Use average orders from training data
-                expected_orders = model_data['training_data_stats']['total_days'] * 1.0  # rough estimate
+                expected_orders = _get_expected_orders(day_of_week)
 
             # Make prediction
-            features = np.array([[day_of_week, expected_orders]])
-            predicted_revenue = model_data['model'].predict(features)[0]
+            def _predict_for(dow, orders):
+                features = np.array([[dow, orders]])
+                return float(model_data['model'].predict(features)[0])
+
+            predicted_revenue = _predict_for(day_of_week, expected_orders)
 
             # Calculate confidence interval (simple approach)
             std_error = np.sqrt(model_data['mse'])
             confidence_interval = 1.96 * std_error  # 95% confidence
+
+            # Helper: sum predictions over a date range
+            def _sum_predictions(start_date, end_date):
+                total = 0.0
+                for d in pd.date_range(start_date, end_date):
+                    dow = d.weekday() + 1
+                    orders = _get_expected_orders(dow)
+                    total += _predict_for(dow, orders)
+                return total
+
+            today = datetime.now().date()
+            week_end = today + timedelta(days=6)
+
+            # End of current month
+            next_month = (today.replace(day=28) + timedelta(days=4)).replace(day=1)
+            end_of_month = next_month - timedelta(days=1)
+
+            # Next month range
+            start_next_month = next_month
+            end_next_month = (next_month.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
 
             return {
                 "status": "success",
@@ -275,7 +324,22 @@ class MLService:
                         "lower": float(max(0, predicted_revenue - confidence_interval)),
                         "upper": float(predicted_revenue + confidence_interval)
                     },
-                    "currency": "IDR"
+                    "currency": "IDR",
+                    "week": {
+                        "start_date": today.isoformat(),
+                        "end_date": week_end.isoformat(),
+                        "predicted_revenue": float(_sum_predictions(today, week_end))
+                    },
+                    "month": {
+                        "start_date": today.isoformat(),
+                        "end_date": end_of_month.isoformat(),
+                        "predicted_revenue": float(_sum_predictions(today, end_of_month))
+                    },
+                    "next_month": {
+                        "start_date": start_next_month.isoformat(),
+                        "end_date": end_next_month.isoformat(),
+                        "predicted_revenue": float(_sum_predictions(start_next_month, end_next_month))
+                    }
                 },
                 "model_info": {
                     "last_trained": model_data['last_trained'].isoformat(),
@@ -297,20 +361,35 @@ class MLService:
             if df.empty:
                 return {"status": "error", "message": "No training data available"}
 
-            # Analyze patterns by day of week and hour
-            df['order_hour'] = pd.to_datetime(df['created_at']).dt.hour
+            # Use unique orders to avoid double-counting when order has multiple items
+            orders = df.drop_duplicates(subset=['order_id']).copy()
 
-            # Daily patterns
-            daily_patterns = df.groupby('day_of_week').agg({
-                'total': ['count', 'sum', 'mean'],
+            # Build daily revenue summary (one row per date)
+            orders['order_date'] = pd.to_datetime(orders['created_at']).dt.date
+            daily_revenue = orders.groupby('order_date').agg({
+                'total': 'sum',
                 'order_id': 'nunique'
-            }).round(2)
+            }).reset_index().rename(columns={
+                'total': 'total_revenue',
+                'order_id': 'daily_order_count'
+            })
+            daily_revenue['day_of_week'] = pd.to_datetime(daily_revenue['order_date']).dt.dayofweek + 1
 
-            daily_patterns.columns = ['total_orders', 'total_revenue', 'avg_order_value', 'unique_orders']
-            daily_patterns = daily_patterns.reset_index()
+            # Daily patterns: aggregate statistics per day-of-week
+            daily_patterns = daily_revenue.groupby('day_of_week').agg(
+                avg_orders_per_day=('daily_order_count', 'mean'),
+                median_orders_per_day=('daily_order_count', 'median'),
+                total_orders=('daily_order_count', 'sum'),
+                avg_revenue_per_day=('total_revenue', 'mean'),
+                median_revenue_per_day=('total_revenue', 'median'),
+                total_revenue=('total_revenue', 'sum')
+            ).round(2).reset_index()
 
-            # Hourly patterns
-            hourly_patterns = df.groupby(['day_of_week', 'order_hour']).agg({
+            # Analyze patterns by order hour (still based on order-level data)
+            orders['order_hour'] = pd.to_datetime(orders['created_at']).dt.hour
+
+            # Hourly patterns (based on order entries)
+            hourly_patterns = orders.groupby(['day_of_week', 'order_hour']).agg({
                 'total': ['count', 'sum']
             }).round(2)
 
@@ -388,19 +467,72 @@ class MLService:
             ]
 
             if today_patterns.empty:
-                today_stats = {"total_orders": 0, "total_revenue": 0, "avg_order_value": 0}
+                today_stats = {
+                    "avg_orders_per_day": 0,
+                    "median_orders_per_day": 0,
+                    "avg_revenue_per_day": 0,
+                    "median_revenue_per_day": 0
+                }
             else:
                 today_stats = today_patterns.iloc[0].to_dict()
+
+            # Backward compatibility: older models used keys like total_orders/total_revenue
+            if 'avg_orders_per_day' not in today_stats and 'total_orders' in today_stats:
+                today_stats['avg_orders_per_day'] = today_stats.get('total_orders', 0)
+            if 'median_orders_per_day' not in today_stats:
+                today_stats['median_orders_per_day'] = today_stats.get('avg_orders_per_day', 0)
+
+            if 'avg_revenue_per_day' not in today_stats:
+                if 'total_revenue' in today_stats and 'total_orders' in today_stats and today_stats['total_orders'] > 0:
+                    today_stats['avg_revenue_per_day'] = today_stats['total_revenue'] / today_stats['total_orders']
+                else:
+                    today_stats['avg_revenue_per_day'] = today_stats.get('avg_order_value', 0)
+            if 'median_revenue_per_day' not in today_stats:
+                today_stats['median_revenue_per_day'] = today_stats.get('avg_revenue_per_day', 0)
 
             # Peak hours for today
             today_peak_hours = model_data['peak_hours'][
                 model_data['peak_hours']['day_of_week'] == today_dow
             ].head(3).to_dict('records')
 
-            # Best performing day
-            best_day = model_data['daily_patterns'].loc[
-                model_data['daily_patterns']['total_revenue'].idxmax()
-            ].to_dict()
+            # Determine revenue and order keys for backward compatibility
+            revenue_col = None
+            for candidate in ['avg_revenue_per_day', 'avg_revenue', 'avg_daily_revenue', 'total_revenue']:
+                if candidate in model_data['daily_patterns'].columns:
+                    revenue_col = candidate
+                    break
+
+            orders_col = None
+            for candidate in ['avg_orders_per_day', 'avg_orders', 'avg_daily_orders', 'daily_order_count', 'total_orders']:
+                if candidate in model_data['daily_patterns'].columns:
+                    orders_col = candidate
+                    break
+
+            # Fallbacks if columns are missing
+            if revenue_col is None:
+                # Derive revenue from total_revenue/total_orders if possible
+                if 'total_revenue' in model_data['daily_patterns'].columns and 'total_orders' in model_data['daily_patterns'].columns:
+                    model_data['daily_patterns']['avg_revenue_per_day'] = (
+                        model_data['daily_patterns']['total_revenue'] / model_data['daily_patterns']['total_orders'].replace({0: np.nan})
+                    ).fillna(0)
+                    revenue_col = 'avg_revenue_per_day'
+                else:
+                    revenue_col = model_data['daily_patterns'].columns[0]
+
+            if orders_col is None:
+                if 'total_orders' in model_data['daily_patterns'].columns:
+                    orders_col = 'total_orders'
+                elif 'daily_order_count' in model_data['daily_patterns'].columns:
+                    orders_col = 'daily_order_count'
+                else:
+                    orders_col = model_data['daily_patterns'].columns[0]
+
+            # Best performing day (highest average daily revenue)
+            if revenue_col in model_data['daily_patterns'].columns:
+                best_day_idx = model_data['daily_patterns'][revenue_col].idxmax()
+                best_day = model_data['daily_patterns'].loc[best_day_idx].to_dict()
+            else:
+                best_day = model_data['daily_patterns'].iloc[0].to_dict()
 
             # Day names mapping
             day_names = {
@@ -413,16 +545,15 @@ class MLService:
                 "today_analysis": {
                     "day_of_week": today_dow,
                     "day_name": day_names.get(today_dow, 'Unknown'),
-                    "expected_orders": today_stats['total_orders'],
-                    "expected_revenue": today_stats['total_revenue'],
-                    "avg_order_value": today_stats['avg_order_value'],
+                    "expected_orders": int(round(today_stats.get('median_orders_per_day', today_stats.get('avg_orders_per_day', 0)))),
+                    "expected_revenue": float(today_stats.get('median_revenue_per_day', today_stats.get('avg_revenue_per_day', 0))),
                     "peak_hours": [f"{hour}:00" for hour in [h['order_hour'] for h in today_peak_hours]]
                 },
                 "best_performing_day": {
-                    "day_of_week": int(best_day['day_of_week']),
-                    "day_name": day_names.get(int(best_day['day_of_week']), 'Unknown'),
-                    "total_revenue": best_day['total_revenue'],
-                    "total_orders": best_day['total_orders']
+                    "day_of_week": int(best_day.get('day_of_week', today_dow)),
+                    "day_name": day_names.get(int(best_day.get('day_of_week', today_dow)), 'Unknown'),
+                    "avg_revenue_per_day": float(best_day.get(revenue_col, 0)),
+                    "avg_orders_per_day": int(round(best_day.get(orders_col, 0)))
                 },
                 "trend_analysis": model_data['trend_analysis'],
                 "model_info": {
@@ -545,7 +676,7 @@ def get_models_status():
 
 if __name__ == '__main__':
     app.run(
-        host='127.0.0.1',
-        port=5000,
+        host=os.getenv('ML_API_HOST', '127.0.0.1'),
+        port=int(os.getenv('ML_API_PORT', 5003)),
         debug=os.getenv('FLASK_DEBUG', 'True').lower() == 'true'
     )

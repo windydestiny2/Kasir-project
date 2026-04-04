@@ -21,6 +21,53 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Kasir Project — Quick Start (Run locally)
+
+This repository is a Laravel app with an integrated Python ML engine (Flask) used for menu recommendation, revenue forecasting, and seasonal pattern analysis.
+
+### ✅ Prerequisites
+- **XAMPP** (MySQL) running
+- **PHP 8.2+** (Composer)
+- **Python 3.8+** (pip)
+- **Git**
+
+### 🚀 Run the project
+```bash
+# 1) Clone & install PHP deps
+git clone <your-repo-url>
+cd Kasir-project
+composer install
+cp .env.example .env
+php artisan key:generate
+
+# 2) Configure DB in .env (sesuaikan dengan XAMPP)
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=db_kasir
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+php artisan migrate
+
+# 3) Start Laravel web server (port 8000)
+php artisan serve --host=127.0.0.1 --port=8000
+
+# 4) Start Flask ML API (port 5003)
+cd ml_engine
+pip install -r requirements.txt
+python app.py
+```
+
+### 🔎 Confirm services
+- Laravel: http://127.0.0.1:8000
+- ML API health: http://127.0.0.1:5003/health
+
+### 🧠 Train models (via dashboard)
+Buka: http://127.0.0.1:8000/ml/dashboard
+
+---
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.

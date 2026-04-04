@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\Log;
 
 class MLController extends Controller
 {
-    private $mlApiUrl = 'http://127.0.0.1:5003';
+    private $mlApiUrl;
+
+    public function __construct()
+    {
+        // Allow configuring ML API endpoint via .env (e.g. ML_API_URL=http://127.0.0.1:5003)
+        $this->mlApiUrl = env('ML_API_URL', 'http://127.0.0.1:5003');
+    }
 
     /**
      * Display ML Dashboard

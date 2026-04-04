@@ -65,8 +65,11 @@ php artisan serve --host=127.0.0.1 --port=8000
 
 #### Terminal 2: Flask ML API
 ```bash
-# Dari ml_engine directory
-python -c "from app import app; app.run(host='127.0.0.1', port=5003, debug=True)"
+# Dari root project directory
+cd ml_engine
+
+# Jalankan ML API (default port 5003)
+python app.py
 ```
 ✅ **API Health Check**: http://127.0.0.1:5003/health
 

@@ -44,7 +44,8 @@ def main():
             print(f"  • Expected revenue: Rp {today['expected_revenue']:,.0f}")
             print(f"  • Peak hours: {', '.join(today['peak_hours'])}")
 
-            print(f"\n🏆 Best day: {best_day['day_name']} (Rp {best_day['total_revenue']:,.0f})")
+            best_revenue = best_day.get('avg_revenue_per_day', best_day.get('median_revenue_per_day', 0))
+            print(f"\n🏆 Best day: {best_day['day_name']} (Rp {best_revenue:,.0f})")
 
             print(f"\n📈 Trend: {trend['trend_percentage']:.1f}% ({trend['trend_direction']})")
         else:

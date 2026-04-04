@@ -167,11 +167,14 @@
                             </div>
                             <div class="mt-3">
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="auto-refresh-toggle" checked>
+                                    <input type="checkbox" class="custom-control-input" id="auto-refresh-toggle">
                                     <label class="custom-control-label" for="auto-refresh-toggle">
                                         <small>Auto-refresh predictions every 30 seconds</small>
                                     </label>
                                 </div>
+                                <button id="refresh-predictions" class="btn btn-sm btn-secondary mt-2">
+                                    <i class="fas fa-sync"></i> Refresh Predictions
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -191,11 +194,24 @@
                                         @if(isset($menuRecommendations['recommendations']) && is_array($menuRecommendations['recommendations']))
                                             <div class="list-group">
                                                 @foreach($menuRecommendations['recommendations'] as $item)
+                                                    @php
+                                                        $menuText = $item['menu_name'] ?? 'N/A';
+                                                        if (!empty($item['topping'])) {
+                                                            $menuText .= ' + ' . $item['topping'];
+                                                        }
+                                                        if (!empty($item['ukuran'])) {
+                                                            $menuText .= ' (' . $item['ukuran'] . ')';
+                                                        }
+                                                    @endphp
                                                     <div class="list-group-item">
-                                                        <strong>{{ $item['menu_name'] ?? 'N/A' }}</strong>
+                                                        <strong>{{ $menuText }}</strong>
                                                         <br>
                                                         <small class="text-muted">
-                                                            Confidence: {{ isset($item['popularity_score']) ? number_format($item['popularity_score'], 1) : 'N/A' }}%
+                                                            @if(isset($item['percent']))
+                                                                Order share: {{ number_format($item['percent'], 1) }}%
+                                                            @else
+                                                                Score: {{ isset($item['popularity_score']) ? number_format($item['popularity_score'], 1) : 'N/A' }}%
+                                                            @endif
                                                         </small>
                                                     </div>
                                                 @endforeach
@@ -228,6 +244,24 @@
                                             @if(isset($revenuePrediction['prediction']['confidence_interval']))
                                                 <small>Confidence Interval: Rp {{ number_format($revenuePrediction['prediction']['confidence_interval']['lower'], 0, ',', '.') }} - Rp {{ number_format($revenuePrediction['prediction']['confidence_interval']['upper'], 0, ',', '.') }}</small>
                                             @endif
+
+                                            @if(isset($revenuePrediction['prediction']['week']))
+                                                <hr>
+                                                <p class="text-muted mb-1">Perkiraan Revenue Minggu Ini ({{ $revenuePrediction['prediction']['week']['start_date'] }} - {{ $revenuePrediction['prediction']['week']['end_date'] }})</p>
+                                                <h4>Rp {{ number_format($revenuePrediction['prediction']['week']['predicted_revenue'], 0, ',', '.') }}</h4>
+                                            @endif
+
+                                            @if(isset($revenuePrediction['prediction']['month']))
+                                                <hr>
+                                                <p class="text-muted mb-1">Perkiraan Revenue Bulan Ini ({{ $revenuePrediction['prediction']['month']['start_date'] }} - {{ $revenuePrediction['prediction']['month']['end_date'] }})</p>
+                                                <h4>Rp {{ number_format($revenuePrediction['prediction']['month']['predicted_revenue'], 0, ',', '.') }}</h4>
+                                            @endif
+
+                                            @if(isset($revenuePrediction['prediction']['next_month']))
+                                                <hr>
+                                                <p class="text-muted mb-1">Perkiraan Revenue Bulan Depan ({{ $revenuePrediction['prediction']['next_month']['start_date'] }} - {{ $revenuePrediction['prediction']['next_month']['end_date'] }})</p>
+                                                <h4>Rp {{ number_format($revenuePrediction['prediction']['next_month']['predicted_revenue'], 0, ',', '.') }}</h4>
+                                            @endif
                                         </div>
                                     @else
                                         <p class="text-muted">Tidak ada data prediksi</p>
@@ -251,7 +285,7 @@
                                                 <div class="alert alert-success">
                                                     <strong>Best Performing Day:</strong> {{ $seasonalPatterns['best_performing_day']['day_name'] ?? 'N/A' }}
                                                     <br>
-                                                    <small>Orders: {{ $seasonalPatterns['best_performing_day']['total_orders'] ?? 'N/A' }}, Revenue: Rp {{ number_format($seasonalPatterns['best_performing_day']['total_revenue'] ?? 0, 0, ',', '.') }}</small>
+                                                    <small>Avg Orders/Day: {{ $seasonalPatterns['best_performing_day']['avg_orders_per_day'] ?? 'N/A' }}, Avg Revenue/Day: Rp {{ number_format($seasonalPatterns['best_performing_day']['avg_revenue_per_day'] ?? 0, 0, ',', '.') }}</small>
                                                 </div>
                                             @endif
 
@@ -349,20 +383,29 @@ $(document).ready(function() {
         });
     });
 
-    // Auto refresh predictions every 30 seconds
-    let autoRefreshInterval = setInterval(function() {
-        if (!$('#auto-refresh-toggle').is(':checked')) {
-            return; // Skip if auto-refresh is disabled
-        }
+    // Refresh logic (manual or automatic)
+    let refreshIntervalId = null;
 
+    function refreshAll() {
         // Refresh menu recommendations
         $.get('/ml/predict/menu-recommendations', function(data) {
             if (data.status === 'success' && data.recommendations) {
                 let html = '<div class="list-group">';
                 data.recommendations.forEach(function(item) {
+                    let title = item.menu_name || 'N/A';
+                    if (item.topping) title += ' + ' + item.topping;
+                    if (item.ukuran) title += ' (' + item.ukuran + ')';
+
+                    let detail = '';
+                    if (item.percent !== undefined) {
+                        detail = 'Order share: ' + item.percent.toFixed(1) + '%';
+                    } else if (item.popularity_score !== undefined) {
+                        detail = 'Score: ' + item.popularity_score.toFixed(1) + '%';
+                    }
+
                     html += '<div class="list-group-item">' +
-                            '<strong>' + item.product_name + '</strong><br>' +
-                            '<small class="text-muted">Confidence: ' + (item.confidence * 100).toFixed(1) + '%</small>' +
+                            '<strong>' + title + '</strong><br>' +
+                            '<small class="text-muted">' + detail + '</small>' +
                             '</div>';
                 });
                 html += '</div>';
@@ -381,6 +424,25 @@ $(document).ready(function() {
                 if (data.prediction.confidence_interval) {
                     html += '<small>Confidence Interval: Rp ' + data.prediction.confidence_interval.lower.toLocaleString('id-ID') + ' - Rp ' + data.prediction.confidence_interval.upper.toLocaleString('id-ID') + '</small>';
                 }
+
+                if (data.prediction.week) {
+                    html += '<hr>' +
+                            '<p class="text-muted mb-1">Perkiraan Revenue Minggu Ini (' + data.prediction.week.start_date + ' - ' + data.prediction.week.end_date + ')</p>' +
+                            '<h4>Rp ' + data.prediction.week.predicted_revenue.toLocaleString('id-ID') + '</h4>';
+                }
+
+                if (data.prediction.month) {
+                    html += '<hr>' +
+                            '<p class="text-muted mb-1">Perkiraan Revenue Bulan Ini (' + data.prediction.month.start_date + ' - ' + data.prediction.month.end_date + ')</p>' +
+                            '<h4>Rp ' + data.prediction.month.predicted_revenue.toLocaleString('id-ID') + '</h4>';
+                }
+
+                if (data.prediction.next_month) {
+                    html += '<hr>' +
+                            '<p class="text-muted mb-1">Perkiraan Revenue Bulan Depan (' + data.prediction.next_month.start_date + ' - ' + data.prediction.next_month.end_date + ')</p>' +
+                            '<h4>Rp ' + data.prediction.next_month.predicted_revenue.toLocaleString('id-ID') + '</h4>';
+                }
+
                 html += '</div>';
                 $('#revenue-prediction').html(html);
             }
@@ -416,15 +478,37 @@ $(document).ready(function() {
         }).fail(function() {
             console.log('Failed to refresh seasonal patterns');
         });
-    }, 30000); // 30 seconds
+    }
+
+    function startAutoRefresh() {
+        if (refreshIntervalId) return;
+        refreshIntervalId = setInterval(refreshAll, 30000);
+    }
+
+    function stopAutoRefresh() {
+        if (refreshIntervalId) {
+            clearInterval(refreshIntervalId);
+            refreshIntervalId = null;
+        }
+    }
+
+    // Start with a single refresh on page load (manual refresh)
+    refreshAll();
 
     // Handle auto-refresh toggle
     $('#auto-refresh-toggle').change(function() {
         if ($(this).is(':checked')) {
+            startAutoRefresh();
             toastr.info('Auto-refresh enabled');
         } else {
+            stopAutoRefresh();
             toastr.info('Auto-refresh disabled');
         }
+    });
+
+    // Manual refresh button
+    $('#refresh-predictions').click(function() {
+        refreshAll();
     });
 });
 </script>
