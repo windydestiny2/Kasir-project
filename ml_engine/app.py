@@ -159,10 +159,27 @@ class MLService:
             recommendations = day_data.nlargest(3, 'popularity_score')[
                 ['menu_name', 'topping', 'ukuran', 'order_count', 'total_revenue', 'popularity_score']
             ].copy()
+            
+            # Get raw data to calculate total qty
+            df = self.get_training_data()
+            if not df.empty:
+                # Calculate total qty from raw data (sum qty per menu combination)
+                day_qty = df[df['day_of_week'] == day_of_week].groupby(['menu_name', 'topping', 'ukuran'])['qty'].sum().reset_index()
+                qty_dict = dict(zip(day_qty[['menu_name', 'topping', 'ukuran']].apply(tuple, axis=1), day_qty['qty']))
+                
+                for idx, rec in recommendations.iterrows():
+                    key = (rec['menu_name'], rec['topping'], rec['ukuran'])
+                    recommendations.at[idx, 'total_qty'] = qty_dict.get(key, rec['order_count'])
+            else:
+                recommendations['total_qty'] = recommendations['order_count']
+            
             if total_orders > 0:
                 recommendations['percent'] = (recommendations['order_count'] / total_orders) * 100
             else:
                 recommendations['percent'] = 0
+            
+            # Add average price per item
+            recommendations['avg_price'] = (recommendations['total_revenue'] / recommendations['order_count']).fillna(0).astype(int)
 
             recommendations = recommendations.to_dict('records')
 
@@ -318,7 +335,7 @@ class MLService:
                 "status": "success",
                 "prediction": {
                     "day_of_week": day_of_week,
-                    "expected_orders": expected_orders,
+                    "expected_orders": int(round(expected_orders)),
                     "predicted_revenue": float(predicted_revenue),
                     "confidence_interval": {
                         "lower": float(max(0, predicted_revenue - confidence_interval)),

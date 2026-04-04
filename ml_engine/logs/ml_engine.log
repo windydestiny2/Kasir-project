@@ -2703,3 +2703,896 @@
 2026-04-04 16:12:09,448 - INFO - 127.0.0.1 - - [04/Apr/2026 16:12:09] "GET /predict/revenue HTTP/1.1" 200 -
 2026-04-04 16:12:09,452 - INFO - 127.0.0.1 - - [04/Apr/2026 16:12:09] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
 2026-04-04 16:12:09,454 - INFO - 127.0.0.1 - - [04/Apr/2026 16:12:09] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:13:19,534 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:19] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:13:25,972 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:25] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:13:25,991 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:25] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:13:25,997 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:25] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:13:26,000 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:13:34,715 - INFO - 127.0.0.1 - - [04/Apr/2026 16:13:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:14:30,431 - INFO - 127.0.0.1 - - [04/Apr/2026 16:14:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:14:36,410 - INFO - 127.0.0.1 - - [04/Apr/2026 16:14:36] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:14:36,418 - INFO - 127.0.0.1 - - [04/Apr/2026 16:14:36] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:14:36,425 - INFO - 127.0.0.1 - - [04/Apr/2026 16:14:36] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:14:36,428 - INFO - 127.0.0.1 - - [04/Apr/2026 16:14:36] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,059 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,065 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,070 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,073 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,075 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,262 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,265 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,268 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,270 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,272 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,273 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,276 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,279 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,281 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,283 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,285 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,287 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,290 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,293 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,295 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,296 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,303 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,307 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,309 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,310 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,321 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,324 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,327 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,329 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,331 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,332 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,335 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,338 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,340 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,342 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,344 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,346 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,349 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,351 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,353 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:18,355 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:18,357 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:18,360 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:18,362 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:18,364 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:18] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,255 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,261 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,265 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,268 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,270 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,432 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,435 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,438 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,440 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,442 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,446 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,449 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,452 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,454 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,456 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,459 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,461 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,464 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,466 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,468 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,471 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,474 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,477 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,479 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,481 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,492 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,494 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,497 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,499 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,501 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,504 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,506 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,509 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,512 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,514 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,517 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,519 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,522 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,525 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,527 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:30,530 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:30,532 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:30,536 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:30,538 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:30,540 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,767 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,769 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,773 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,775 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,777 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,918 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,921 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,925 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,927 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,929 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,932 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,934 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,938 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,940 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,941 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,945 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,947 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,951 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,953 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,955 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,958 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,960 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,963 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,965 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,967 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,973 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,976 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,979 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,981 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,983 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,986 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:34,989 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:34,992 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:34,994 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:34,996 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:34,999 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:34] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:35,001 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:35,005 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:35,007 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:35,009 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:35,012 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:15:35,014 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:35,017 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:35,019 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:35,021 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:35] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:36,613 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:36] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:36,616 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:36] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:36,621 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:36] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:36,623 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:36] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:15:56,044 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:56] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:15:56,052 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:56] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:15:56,057 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:56] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:15:56,060 - INFO - 127.0.0.1 - - [04/Apr/2026 16:15:56] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:20,034 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:20,041 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:20,046 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:20,050 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:20,754 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:20,761 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:20,766 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:20,770 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:22,100 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:22,108 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:22,113 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:22,117 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:22,516 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:22,524 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:22,528 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:22,533 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:22] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:24,189 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:24] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:24,196 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:24] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:24,200 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:24] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:24,204 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:24] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:28,982 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:28] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:28,988 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:28] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:28,992 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:28] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:28,995 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:28] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:28,997 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:28] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,166 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,169 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,172 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,174 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,176 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,180 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,182 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,185 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,187 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,189 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,192 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,195 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,198 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,200 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,202 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,205 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,207 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,211 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,213 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,215 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,227 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,230 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,233 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,235 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,237 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,240 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,242 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,245 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,247 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,249 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,253 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,255 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,258 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,260 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,262 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:29,265 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:29,268 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:29,271 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:29,273 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:29,275 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,090 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,096 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,101 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,104 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,106 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,269 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,272 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,275 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,278 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,280 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,283 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,285 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,288 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,290 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,292 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,295 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,297 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,300 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,302 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,304 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,307 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,310 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,314 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,316 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,318 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,329 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,332 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,335 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,336 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,338 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,341 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,344 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,347 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,349 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,351 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,354 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,356 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,360 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,362 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,364 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:39,367 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:39,369 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:39,372 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:39,375 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:39,377 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,197 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,202 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,206 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,208 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,211 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,360 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,363 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,367 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,370 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,373 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,377 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,379 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,383 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,385 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,387 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,390 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,392 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,395 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,398 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,400 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,403 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,405 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,408 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,410 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,412 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,418 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,420 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,423 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,425 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,427 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,430 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,433 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,436 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,438 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,440 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,443 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,445 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,448 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,450 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,452 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:46,455 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:16:46,457 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:46,461 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:46,463 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:46,465 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:46] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:16:53,513 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:53] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:55,200 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:55] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:16:55,208 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:55] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:16:55,214 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:55] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:16:55,217 - INFO - 127.0.0.1 - - [04/Apr/2026 16:16:55] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:05,542 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:05] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:05,549 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:05] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:05,553 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:05] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:05,556 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:05] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,594 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,605 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,614 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,618 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,620 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,788 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,790 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,794 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,796 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,798 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,801 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,803 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,806 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,808 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,811 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,813 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,816 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,819 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,821 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,823 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,825 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,828 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,831 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,833 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,835 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,848 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,851 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,854 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,855 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,857 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,860 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,863 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,866 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,868 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,870 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,873 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,876 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,879 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,882 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,884 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:20,887 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:18:20,890 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:20,894 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:20,898 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:20,900 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:25,041 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:25] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:25,047 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:25] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:25,050 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:25] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:25,053 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:25] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:18:56,862 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:56] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:18:56,867 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:56] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:18:56,871 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:56] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:18:56,874 - INFO - 127.0.0.1 - - [04/Apr/2026 16:18:56] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:22:40,996 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:22:41,428 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:22:42,365 - WARNING -  * Debugger is active!
+2026-04-04 16:22:42,372 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:22:48,246 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:22:48,504 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:22:49,039 - WARNING -  * Debugger is active!
+2026-04-04 16:22:49,047 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:22:50,235 - INFO - 127.0.0.1 - - [04/Apr/2026 16:22:50] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:22:50,798 - INFO - 127.0.0.1 - - [04/Apr/2026 16:22:50] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:22:50,802 - INFO - 127.0.0.1 - - [04/Apr/2026 16:22:50] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:22:50,804 - INFO - 127.0.0.1 - - [04/Apr/2026 16:22:50] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:22:56,736 - INFO - 127.0.0.1 - - [04/Apr/2026 16:22:56] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:02,529 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:02] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,633 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,647 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,660 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,664 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,666 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,876 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,879 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,882 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,884 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,886 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,887 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,890 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,895 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,899 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,901 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,902 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,905 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,908 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,911 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,912 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,914 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,916 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,920 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,923 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,925 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,937 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,939 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,942 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,945 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,947 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,948 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,950 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,954 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,956 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,958 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,959 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,962 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,965 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,967 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,970 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:08,971 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:08,974 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:08,977 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:08,979 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:08,981 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:11,090 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:11] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:11,096 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:11] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:11,100 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:11] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:11,103 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:11] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:20,882 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:20] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:20,899 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:20] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:20,912 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:20] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:20,915 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:20] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:20,917 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:20] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,090 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,093 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,096 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,098 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,100 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,101 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,104 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,107 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,110 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,112 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,113 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,115 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,119 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,121 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,123 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,124 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,131 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,134 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,136 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,137 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,146 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,149 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,152 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,153 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,155 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,156 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,159 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,162 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,164 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,166 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,167 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,170 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,173 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,175 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,177 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:21,178 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:21,181 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:21,184 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:21,186 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:21,187 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:21] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,748 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,752 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,755 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,758 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,760 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,903 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,906 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,913 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,916 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,918 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,920 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,922 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,926 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,929 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,931 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,933 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,936 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,939 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,941 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,943 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,945 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,947 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,950 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,953 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,955 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,960 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,962 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,965 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,968 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,969 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,971 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,973 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,976 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,979 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,981 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,982 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,985 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:26,988 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:26,991 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:26,993 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:26,994 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /health HTTP/1.1" 200 -
+2026-04-04 16:23:26,996 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:27,000 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:27] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:27,002 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:27] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:27,004 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:27] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:23:32,634 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:34,934 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:23:34,940 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:23:34,944 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:23:34,948 - INFO - 127.0.0.1 - - [04/Apr/2026 16:23:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:30:04,959 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:04] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:30:04,976 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:04] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:30:04,980 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:04] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:30:04,982 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:04] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:30:28,773 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:28] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:30:35,234 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:35] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:30:37,235 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:37] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:30:37,241 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:37] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:30:37,248 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:37] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:30:37,251 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:37] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:30:44,748 - INFO - 127.0.0.1 - - [04/Apr/2026 16:30:44] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:31:33,982 - INFO - 127.0.0.1 - - [04/Apr/2026 16:31:33] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:31:33,988 - INFO - 127.0.0.1 - - [04/Apr/2026 16:31:33] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:31:33,994 - INFO - 127.0.0.1 - - [04/Apr/2026 16:31:33] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:31:33,996 - INFO - 127.0.0.1 - - [04/Apr/2026 16:31:33] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:46:11,902 - INFO - 127.0.0.1 - - [04/Apr/2026 16:46:11] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:46:11,918 - INFO - 127.0.0.1 - - [04/Apr/2026 16:46:11] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:46:11,921 - INFO - 127.0.0.1 - - [04/Apr/2026 16:46:11] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:46:11,924 - INFO - 127.0.0.1 - - [04/Apr/2026 16:46:11] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:47:51,939 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:47:53,075 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:47:54,016 - WARNING -  * Debugger is active!
+2026-04-04 16:47:54,024 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:47:59,053 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:47:59,196 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:47:59,914 - WARNING -  * Debugger is active!
+2026-04-04 16:47:59,920 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:48:03,145 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:03,145 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:03] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:03,716 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:03] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:48:03,721 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:03] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:48:03,723 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:03] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:48:08,852 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:48:09,207 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:48:10,043 - WARNING -  * Debugger is active!
+2026-04-04 16:48:10,057 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:48:10,806 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:10,807 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:10] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:11,373 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:11] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:48:11,377 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:11] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:48:11,379 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:11] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:48:17,830 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:17,831 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:17] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:17,839 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:17] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:48:17,843 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:17] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:48:17,846 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:17] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:48:26,742 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:26,743 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:26,750 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:48:26,755 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:48:26,758 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:48:30,351 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:30,351 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:37,249 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:48:37,250 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:37] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:48:37,259 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:37] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:48:37,264 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:37] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:48:37,267 - INFO - 127.0.0.1 - - [04/Apr/2026 16:48:37] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:49:32,764 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:49:32,765 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:49:32,777 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:32] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:49:32,783 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:32] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:49:32,786 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:32] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:49:50,794 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:49:50,795 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:50] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:49:50,803 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:50] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:49:50,809 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:50] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:49:50,813 - INFO - 127.0.0.1 - - [04/Apr/2026 16:49:50] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:52:11,438 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:52:11,439 - INFO - 127.0.0.1 - - [04/Apr/2026 16:52:11] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:52:11,453 - INFO - 127.0.0.1 - - [04/Apr/2026 16:52:11] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:52:11,457 - INFO - 127.0.0.1 - - [04/Apr/2026 16:52:11] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:52:11,459 - INFO - 127.0.0.1 - - [04/Apr/2026 16:52:11] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:54:09,974 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:54:09,976 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:54:09,993 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:54:09,999 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:54:10,303 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:54:11,503 - WARNING -  * Debugger is active!
+2026-04-04 16:54:11,514 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:54:11,536 - INFO - 127.0.0.1 - - [04/Apr/2026 16:54:11] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:54:12,117 - INFO - 127.0.0.1 - - [04/Apr/2026 16:54:12] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:54:12,120 - INFO - 127.0.0.1 - - [04/Apr/2026 16:54:12] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:54:12,122 - INFO - 127.0.0.1 - - [04/Apr/2026 16:54:12] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:56:09,605 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:09] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:56:09,625 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:09] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:56:09,629 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:09] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:56:09,633 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:09] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:56:23,902 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:23] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:56:23,921 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:23] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:56:23,928 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:23] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:56:23,931 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:23] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:56:51,566 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:51] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:56:51,595 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:51] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:56:51,598 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:51] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:56:51,601 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:51] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:56:52,375 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:52] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:56:52,383 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:52] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:56:52,387 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:52] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:56:52,391 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:52] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:56:53,084 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:53] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:56:53,090 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:53] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:56:53,093 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:53] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:56:53,096 - INFO - 127.0.0.1 - - [04/Apr/2026 16:56:53] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:57:15,892 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:57:16,284 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:57:17,118 - WARNING -  * Debugger is active!
+2026-04-04 16:57:17,125 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:57:21,241 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:57:22,269 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:57:22,785 - WARNING -  * Debugger is active!
+2026-04-04 16:57:22,791 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:57:22,998 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:57:23,896 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:57:24,334 - WARNING -  * Debugger is active!
+2026-04-04 16:57:24,341 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:57:25,900 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:57:25,900 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:25] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:57:26,466 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:26] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:57:26,471 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:26] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:57:26,474 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:26] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:57:38,906 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:57:38,907 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:38] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:57:38,924 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:38] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:57:38,928 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:38] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:57:38,931 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:38] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:57:42,533 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:57:42,534 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:42] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:57:42,542 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:42] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:57:42,548 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:42] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:57:42,551 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:42] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:57:43,250 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:57:43,250 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:43] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:57:43,258 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:43] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:57:43,262 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:43] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:57:43,267 - INFO - 127.0.0.1 - - [04/Apr/2026 16:57:43] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:58:40,879 - ERROR - Error predicting menu recommendations: "['total_qty', 'item_total'] not in index"
+2026-04-04 16:58:40,880 - INFO - 127.0.0.1 - - [04/Apr/2026 16:58:40] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:58:40,886 - INFO - 127.0.0.1 - - [04/Apr/2026 16:58:40] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:58:40,890 - INFO - 127.0.0.1 - - [04/Apr/2026 16:58:40] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:58:40,893 - INFO - 127.0.0.1 - - [04/Apr/2026 16:58:40] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 16:59:44,083 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:59:44,085 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 16:59:44,768 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 16:59:45,618 - WARNING -  * Debugger is active!
+2026-04-04 16:59:45,629 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 16:59:47,567 - INFO - 127.0.0.1 - - [04/Apr/2026 16:59:47] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 16:59:48,119 - INFO - 127.0.0.1 - - [04/Apr/2026 16:59:48] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 16:59:48,122 - INFO - 127.0.0.1 - - [04/Apr/2026 16:59:48] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 16:59:48,125 - INFO - 127.0.0.1 - - [04/Apr/2026 16:59:48] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:14:19,159 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:19] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:14:19,176 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:19] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:14:19,181 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:19] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:14:19,183 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:19] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:14:39,673 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:39] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:14:39,696 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:39] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:14:39,700 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:39] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:14:39,702 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:39] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:14:57,928 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:57] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:14:57,948 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:57] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:14:57,952 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:57] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:14:57,954 - INFO - 127.0.0.1 - - [04/Apr/2026 17:14:57] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:18:58,695 - INFO - 127.0.0.1 - - [04/Apr/2026 17:18:58] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:18:58,711 - INFO - 127.0.0.1 - - [04/Apr/2026 17:18:58] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:18:58,716 - INFO - 127.0.0.1 - - [04/Apr/2026 17:18:58] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:18:58,719 - INFO - 127.0.0.1 - - [04/Apr/2026 17:18:58] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:19:15,302 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:15] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:19:15,322 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:15] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:19:15,326 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:15] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:19:15,329 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:15] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:19:32,579 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:19:32,599 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:32] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:19:32,603 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:32] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:19:32,606 - INFO - 127.0.0.1 - - [04/Apr/2026 17:19:32] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:27:45,874 - INFO - 127.0.0.1 - - [04/Apr/2026 17:27:45] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:27:45,899 - INFO - 127.0.0.1 - - [04/Apr/2026 17:27:45] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:27:45,903 - INFO - 127.0.0.1 - - [04/Apr/2026 17:27:45] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:27:45,905 - INFO - 127.0.0.1 - - [04/Apr/2026 17:27:45] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:28:30,072 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:30] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:28:30,094 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:30] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:28:30,097 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:30] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:28:30,099 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:30] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:28:32,286 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:28:32,295 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:32] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:28:32,299 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:32] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:28:32,303 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:32] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:28:33,783 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:33] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:28:33,791 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:33] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:28:33,796 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:33] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:28:33,799 - INFO - 127.0.0.1 - - [04/Apr/2026 17:28:33] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:38:38,550 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:38] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:38:38,566 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:38] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:38:38,570 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:38] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:38:38,573 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:38] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:38:41,807 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 17:38:42,106 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 17:38:43,596 - WARNING -  * Debugger is active!
+2026-04-04 17:38:43,618 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 17:38:48,592 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:38:48,593 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:48] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:38:49,167 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:49] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:38:49,171 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:49] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:38:49,173 - INFO - 127.0.0.1 - - [04/Apr/2026 17:38:49] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:39:09,914 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:39:09,916 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:09] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:39:09,934 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:09] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:39:09,939 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:09] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:39:09,942 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:09] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:39:32,043 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:39:50,335 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:39:50,336 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:50] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:39:50,350 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:50] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:39:50,354 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:50] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:39:50,357 - INFO - 127.0.0.1 - - [04/Apr/2026 17:39:50] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:40:58,898 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:41:16,593 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:41:16,594 - INFO - 127.0.0.1 - - [04/Apr/2026 17:41:16] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:41:16,607 - INFO - 127.0.0.1 - - [04/Apr/2026 17:41:16] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:41:16,611 - INFO - 127.0.0.1 - - [04/Apr/2026 17:41:16] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:41:16,614 - INFO - 127.0.0.1 - - [04/Apr/2026 17:41:16] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:41:44,019 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/train_menu_recommendation.py', reloading
+2026-04-04 17:41:44,810 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 17:41:45,702 - WARNING -  * Debugger is active!
+2026-04-04 17:41:45,709 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 17:42:11,783 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:42:11,785 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:11] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:42:12,374 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:12] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:42:12,378 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:12] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:42:12,381 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:12] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:42:27,288 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:42:29,011 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:42:29,012 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:29] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:42:29,025 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:29] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:42:29,030 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:29] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:42:29,034 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:29] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:42:32,152 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:42:32,153 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:42:32,163 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:42:32,168 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:42:32,172 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:42:32,953 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:42:32,953 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:42:32,961 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:42:32,968 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:42:32,974 - INFO - 127.0.0.1 - - [04/Apr/2026 17:42:32] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:43:19,855 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:43:19,857 - INFO - 127.0.0.1 - - [04/Apr/2026 17:43:19] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:43:19,870 - INFO - 127.0.0.1 - - [04/Apr/2026 17:43:19] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:43:19,875 - INFO - 127.0.0.1 - - [04/Apr/2026 17:43:19] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:43:19,878 - INFO - 127.0.0.1 - - [04/Apr/2026 17:43:19] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:44:26,028 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:44:26,029 - INFO - 127.0.0.1 - - [04/Apr/2026 17:44:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:44:37,236 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:44:37,239 - INFO - 127.0.0.1 - - [04/Apr/2026 17:44:37] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:44:37,258 - INFO - 127.0.0.1 - - [04/Apr/2026 17:44:37] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:44:37,262 - INFO - 127.0.0.1 - - [04/Apr/2026 17:44:37] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:44:37,265 - INFO - 127.0.0.1 - - [04/Apr/2026 17:44:37] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:45:05,228 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:45:05,229 - INFO - 127.0.0.1 - - [04/Apr/2026 17:45:05] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:45:05,245 - INFO - 127.0.0.1 - - [04/Apr/2026 17:45:05] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:45:05,250 - INFO - 127.0.0.1 - - [04/Apr/2026 17:45:05] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:45:05,254 - INFO - 127.0.0.1 - - [04/Apr/2026 17:45:05] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:46:26,038 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:46:26,061 - INFO - 127.0.0.1 - - [04/Apr/2026 17:46:26] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:46:28,376 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:46:28,377 - INFO - 127.0.0.1 - - [04/Apr/2026 17:46:28] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:46:28,388 - INFO - 127.0.0.1 - - [04/Apr/2026 17:46:28] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:46:28,392 - INFO - 127.0.0.1 - - [04/Apr/2026 17:46:28] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:46:28,395 - INFO - 127.0.0.1 - - [04/Apr/2026 17:46:28] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:47:04,740 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:47:04,741 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:04] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:47:04,763 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:04] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:47:04,769 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:04] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:47:04,772 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:04] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:47:58,916 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:47:58,918 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:58] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:47:58,936 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:58] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:47:58,940 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:58] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:47:58,943 - INFO - 127.0.0.1 - - [04/Apr/2026 17:47:58] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:48:02,899 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:48:02,900 - INFO - 127.0.0.1 - - [04/Apr/2026 17:48:02] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:48:02,907 - INFO - 127.0.0.1 - - [04/Apr/2026 17:48:02] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:48:02,911 - INFO - 127.0.0.1 - - [04/Apr/2026 17:48:02] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:48:02,915 - INFO - 127.0.0.1 - - [04/Apr/2026 17:48:02] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:50:34,827 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:50:34,828 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:34] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:50:34,843 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:34] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:50:34,858 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:34] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:50:34,860 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:34] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:50:38,791 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:50:38,792 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:38] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:50:38,813 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:38] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:50:38,820 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:38] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:50:38,826 - INFO - 127.0.0.1 - - [04/Apr/2026 17:50:38] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:57:57,476 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:57:57,479 - INFO - 127.0.0.1 - - [04/Apr/2026 17:57:57] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:57:57,496 - INFO - 127.0.0.1 - - [04/Apr/2026 17:57:57] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:57:57,501 - INFO - 127.0.0.1 - - [04/Apr/2026 17:57:57] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:57:57,504 - INFO - 127.0.0.1 - - [04/Apr/2026 17:57:57] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:58:08,250 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:58:08,251 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:58:08,268 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:58:08,274 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:58:08,277 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:58:53,376 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:58:53,377 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:53] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:58:53,399 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:53] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:58:53,403 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:53] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:58:53,407 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:53] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:58:57,054 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:58:57,055 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:57] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:58:57,069 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:57] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:58:57,074 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:57] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:58:57,077 - INFO - 127.0.0.1 - - [04/Apr/2026 17:58:57] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:59:08,607 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:59:08,608 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:08] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:59:08,622 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:08] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:59:08,627 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:08] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:59:08,629 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:08] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 17:59:13,248 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 17:59:13,249 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:13] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 17:59:13,256 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:13] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 17:59:13,262 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:13] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 17:59:13,266 - INFO - 127.0.0.1 - - [04/Apr/2026 17:59:13] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:07:33,099 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 18:07:33,100 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:33] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:07:33,114 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:33] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:07:33,118 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:33] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:07:33,121 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:33] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:07:55,489 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 18:07:55,491 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:55] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:07:55,509 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:55] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:07:55,514 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:55] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:07:55,517 - INFO - 127.0.0.1 - - [04/Apr/2026 18:07:55] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:08:16,925 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 18:08:16,926 - INFO - 127.0.0.1 - - [04/Apr/2026 18:08:16] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:08:16,945 - INFO - 127.0.0.1 - - [04/Apr/2026 18:08:16] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:08:16,952 - INFO - 127.0.0.1 - - [04/Apr/2026 18:08:16] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:08:16,955 - INFO - 127.0.0.1 - - [04/Apr/2026 18:08:16] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:09:05,188 - ERROR - Error predicting menu recommendations: name 'df' is not defined
+2026-04-04 18:09:05,189 - INFO - 127.0.0.1 - - [04/Apr/2026 18:09:05] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:09:05,205 - INFO - 127.0.0.1 - - [04/Apr/2026 18:09:05] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:09:05,209 - INFO - 127.0.0.1 - - [04/Apr/2026 18:09:05] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:09:05,212 - INFO - 127.0.0.1 - - [04/Apr/2026 18:09:05] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:09:44,903 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 18:09:45,927 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 18:09:46,943 - WARNING -  * Debugger is active!
+2026-04-04 18:09:46,954 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 18:10:59,414 - INFO -  * Detected change in '/Applications/XAMPP/xamppfiles/htdocs/Kasir-project/ml_engine/app.py', reloading
+2026-04-04 18:10:59,614 - INFO -  * Restarting with watchdog (fsevents)
+2026-04-04 18:11:00,401 - WARNING -  * Debugger is active!
+2026-04-04 18:11:00,414 - INFO -  * Debugger PIN: 488-255-891
+2026-04-04 18:11:03,979 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:03] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:11:06,480 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:06] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:11:06,486 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:06] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:11:06,490 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:06] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:11:19,546 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:19] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:11:19,556 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:19] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:11:19,561 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:19] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:11:19,564 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:19] "GET /models/status HTTP/1.1" 200 -
+2026-04-04 18:11:27,887 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:27] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-04 18:11:27,892 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:27] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-04 18:11:27,894 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:27] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-04 18:11:27,897 - INFO - 127.0.0.1 - - [04/Apr/2026 18:11:27] "GET /models/status HTTP/1.1" 200 -

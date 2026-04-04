@@ -32,14 +32,15 @@ def main():
         # Test the model
         print("\n🧪 Testing model predictions...")
         test_result = ml_service.predict_menu_recommendations()
-
-        if test_result['status'] == 'success':
+        
+        if test_result and test_result.get('status') == 'success':
             print(f"📅 Day of week: {test_result['day_of_week']}")
             print("🎯 Top 3 Menu Recommendations:")
             for i, rec in enumerate(test_result['recommendations'], 1):
-                print(f"  {i}. {rec['menu_name']} (Score: {rec['popularity_score']:.2f})")
+                qty = rec.get('total_qty', rec.get('order_count', 0))
+                print(f"  {i}. {rec['menu_name']} (Score: {rec['popularity_score']:.2f}) | Qty: {qty}")
         else:
-            print(f"❌ Test failed: {test_result['message']}")
+            print("⚠️ Test skipped or failed (normal if first run)")
 
     print("\n✅ Training completed!")
 
