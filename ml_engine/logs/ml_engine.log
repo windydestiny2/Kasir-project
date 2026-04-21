@@ -4412,3 +4412,21 @@
 2026-04-21 23:36:47,762 - INFO - 127.0.0.1 - - [21/Apr/2026 23:36:47] "GET /models/status HTTP/1.1" 200 -
 2026-04-21 23:36:47,776 - INFO - 127.0.0.1 - - [21/Apr/2026 23:36:47] "GET /insights/menu-recommendations HTTP/1.1" 200 -
 2026-04-21 23:36:47,781 - INFO - 127.0.0.1 - - [21/Apr/2026 23:36:47] "GET /insights/revenue HTTP/1.1" 200 -
+2026-04-22 00:23:23,512 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5003
+2026-04-22 00:23:23,513 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-22 00:23:23,513 - INFO -  * Restarting with stat
+2026-04-22 00:23:23,807 - WARNING -  * Debugger is active!
+2026-04-22 00:23:23,813 - INFO -  * Debugger PIN: 118-055-920
+2026-04-22 00:23:56,959 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:56] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-22 00:23:57,733 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:57] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-22 00:23:57,738 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:57] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-22 00:23:57,741 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:57] "GET /models/status HTTP/1.1" 200 -
+2026-04-22 00:23:57,755 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:57] "GET /insights/menu-recommendations HTTP/1.1" 200 -
+2026-04-22 00:23:57,760 - INFO - 127.0.0.1 - - [22/Apr/2026 00:23:57] "GET /insights/revenue HTTP/1.1" 200 -
+2026-04-22 00:24:09,425 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /predict/menu-recommendations HTTP/1.1" 200 -
+2026-04-22 00:24:09,440 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /predict/revenue HTTP/1.1" 200 -
+2026-04-22 00:24:09,444 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /predict/seasonal-patterns HTTP/1.1" 200 -
+2026-04-22 00:24:09,447 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /models/status HTTP/1.1" 200 -
+2026-04-22 00:24:09,461 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /insights/menu-recommendations HTTP/1.1" 200 -
+2026-04-22 00:24:09,466 - INFO - 127.0.0.1 - - [22/Apr/2026 00:24:09] "GET /insights/revenue HTTP/1.1" 200 -

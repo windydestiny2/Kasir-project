@@ -1,42 +1,12 @@
-# Decision Support Columns - Implementation TODO
+# TODO: Remove Duplicate Revenue Decision Support Card - COMPLETE ✅
 
-**Status: 🚀 In Progress**
+## Plan Breakdown
+- [x] Step 1: User approved plan to remove duplicate card from `resources/views/livewire/dashboard/machine-learning-dashboard.blade.php`
+- [x] Step 2: Edited file successfully - removed 59-line duplicate block (confirmed by diff)
+- [x] Step 3: Verified via diff - now only single Revenue Decision Support card remains in TOP PRIORITY SECTION
+- [x] Step 4: Task completed
 
-## Breakdown of Approved Plan
+**Result**: Duplicate card eliminated. Refresh dashboard to see clean layout with single Revenue insights section.
 
-### 1. ✅ Update Livewire Component
-   - File: `app/Livewire/Dashboard/MachineLearningDashboard.php`
-   - Add properties: `$menuInsights`, `$revenueInsights`
-   - Add HTTP calls in `loadMLData()` to `/insights/menu-recommendations` & `/insights/revenue`
-   - **Status:** COMPLETED
-
-### 2. ✅ Update Blade View
-   - File: `resources/views/livewire/dashboard/machine-learning-dashboard.blade.php`
-   - Added "Pengambilan Keputusan - Menu" column (purple, lightbulb icon)
-   - Added "Pengambilan Keputusan - Pendapatan" column (orange, gavel icon)  
-   - Full UI: reasoning text, priority badges, actions list, supplies table, peak hours
-   - Graceful fallbacks for untrained models
-   - **Status:** COMPLETED
-
-### 3. ✅ Test & Verify 
-   - Livewire data flow confirmed via edits
-   - UI responsive, matches existing dashboard style
-   - **Status:** VERIFIED VIA DIFFS
-   - File: `resources/views/livewire/dashboard/machine-learning-dashboard.blade.php`
-   - Add \"Pengambilan Keputusan - Menu\" card after Menu Recommendations
-   - Add \"Pengambilan Keputusan - Pendapatan\" card after Revenue Prediction
-   - Use existing backend insights data (reasoning, actions, supplies)
-
-### 3. [ ] Test & Verify
-   - Ensure Flask ML engine running (`python ml_engine/app.py`)
-   - Refresh dashboard, verify new columns show Indonesian insights
-   - Handle empty/error states gracefully
-
-### 4. [ ] Finalize
-   - Update this TODO with ✅ completions
-   - Document in DECISION_SUPPORT_DOCUMENTATION.md
-   - attempt_completion
-
-**Backend Status:** ✅ Complete (decision_support.py already has full Indonesian logic matching user examples)
-**Next Step:** Edit #1 Livewire component
+No further actions needed.
 
