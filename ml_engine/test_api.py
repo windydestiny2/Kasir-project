@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test script for ML API endpoints
+Test script untuk ML API endpoints
 """
 
 import requests

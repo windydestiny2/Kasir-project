@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Menu Recommendation Model Training Script
-Train the model to predict popular menus for each day of the week
+Untuk prediksi menu yang paling populer berdasarkan data penjualan historis, hari dalam minggu, dan faktor lainnya. Model ini akan digunakan untuk memberikan rekomendasi menu kepada pelanggan setiap harinya.
 """
 
 import sys

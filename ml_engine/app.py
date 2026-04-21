@@ -13,6 +13,7 @@ import joblib
 import os
 from dotenv import load_dotenv
 import logging
+from decision_support import DecisionSupportEngine
 
 # Load environment variables
 load_dotenv()
@@ -26,6 +27,9 @@ logging.basicConfig(
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Laravel integration
+
+# Initialize Decision Support Engine
+decision_engine = DecisionSupportEngine()
 
 class DatabaseConnection:
     """Database connection manager"""
@@ -690,6 +694,113 @@ def get_models_status():
         "status": "success",
         "models": models_status
     })
+
+# ========================
+# DECISION SUPPORT ENDPOINTS
+# ========================
+
+@app.route('/insights/menu-recommendations', methods=['GET'])
+def get_menu_insights():
+    """Get decision support insights for menu recommendations"""
+    try:
+        # Get menu recommendations
+        menu_result = ml_service.predict_menu_recommendations()
+        
+        if menu_result.get('status') != 'success':
+            return jsonify({
+                "status": "error",
+                "message": "Failed to get menu recommendations"
+            }), 400
+        
+        recommendations = menu_result.get('recommendations', [])
+        
+        # Get decision insights
+        insights = decision_engine.get_menu_insights(recommendations)
+        
+        return jsonify({
+            "status": "success",
+            "recommendations": recommendations,
+            "insights": insights,
+            "generated_at": datetime.now().isoformat()
+        })
+    
+    except Exception as e:
+        logging.error(f"Error getting menu insights: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+@app.route('/insights/revenue', methods=['GET'])
+def get_revenue_insights():
+    """Get decision support insights for revenue predictions"""
+    try:
+        # Get revenue predictions
+        day_of_week = request.args.get('day_of_week', type=int)
+        expected_orders = request.args.get('expected_orders', type=int)
+        
+        revenue_result = ml_service.predict_revenue(day_of_week, expected_orders)
+        
+        if revenue_result.get('status') != 'success':
+            return jsonify({
+                "status": "error",
+                "message": "Failed to get revenue predictions"
+            }), 400
+        
+        # Get seasonal patterns for additional context
+        seasonal_result = ml_service.get_seasonal_patterns()
+        seasonal_patterns = seasonal_result.get('today_analysis', {}) if seasonal_result.get('status') == 'success' else None
+        
+        # Get decision insights
+        insights = decision_engine.get_revenue_insights(revenue_result, seasonal_patterns)
+        
+        return jsonify({
+            "status": "success",
+            "prediction": revenue_result.get('prediction', {}),
+            "insights": insights,
+            "generated_at": datetime.now().isoformat()
+        })
+    
+    except Exception as e:
+        logging.error(f"Error getting revenue insights: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+@app.route('/insights/daily-summary', methods=['GET'])
+def get_daily_summary():
+    """Get complete daily decision support summary"""
+    try:
+        # Get menu insights
+        menu_result = ml_service.predict_menu_recommendations()
+        menu_insights = []
+        if menu_result.get('status') == 'success':
+            menu_insights = decision_engine.get_menu_insights(menu_result.get('recommendations', []))
+        
+        # Get revenue insights
+        revenue_result = ml_service.predict_revenue()
+        seasonal_result = ml_service.get_seasonal_patterns()
+        seasonal_patterns = seasonal_result.get('today_analysis', {}) if seasonal_result.get('status') == 'success' else None
+        revenue_insights = []
+        if revenue_result.get('status') == 'success':
+            revenue_insights = decision_engine.get_revenue_insights(revenue_result, seasonal_patterns)
+        
+        # Generate daily summary
+        summary = decision_engine.get_daily_summary(menu_insights, revenue_insights)
+        
+        return jsonify({
+            "status": "success",
+            "summary": summary,
+            "generated_at": datetime.now().isoformat()
+        })
+    
+    except Exception as e:
+        logging.error(f"Error getting daily summary: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
 
 if __name__ == '__main__':
     app.run(

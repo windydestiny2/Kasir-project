@@ -58,6 +58,10 @@
                     </h3>
                 </div>
                 <div class="card-body">
+                    <p class="text-muted small mb-3">
+                        Persentase menunjukkan pangsa <strong>order item rows</strong> untuk menu ini terhadap total order item rows pada hari yang sama.
+                        Jadi 14.9% berarti menu ini mewakili sekitar 14.9% dari baris order item teratas hari ini.
+                    </p>
                     @if(empty($menuRecommendations))
                         <div class="alert alert-info">
                             <i class="fas fa-info-circle mr-2"></i>
@@ -114,6 +118,97 @@
         </div>
     </div>
 
+    <!-- Menu Decision Support Insights -->
+    @if(!empty($menuInsights))
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-outline card-success">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Pengambilan Keputusan - Menu & Promosi
+                    </h3>
+                </div>
+                <div class="card-body">
+                    @foreach($menuInsights as $insight)
+                        <div class="card mb-3 {{ $insight['priority'] === 'high' ? 'border-danger' : 'border-info' }}">
+                            <div class="card-header {{ $insight['priority'] === 'high' ? 'bg-danger' : 'bg-info' }} text-white">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-{{ $insight['type'] === 'co_purchase' ? 'link' : 'cubes' }} mr-2"></i>
+                                    {{ $insight['title'] }}
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <!-- Reasoning -->
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">💭 Analisis:</h6>
+                                    <p class="text-muted">{{ $insight['reasoning'] }}</p>
+                                </div>
+
+                                <!-- Actions -->
+                                @if(!empty($insight['actions']))
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">✅ Rekomendasi Aksi:</h6>
+                                    <ul class="list-unstyled">
+                                        @foreach($insight['actions'] as $action)
+                                        <li class="mb-2">
+                                            <div class="badge badge-{{ $action['priority'] === 1 ? 'danger' : 'warning' }} mr-2">
+                                                Priority {{ $action['priority'] ?? 'N/A' }}
+                                            </div>
+                                            <strong>{{ $action['action'] ?? $action }}</strong>
+                                            @if(is_array($action) && isset($action['detail']))
+                                                <br><small class="text-muted">{{ $action['detail'] }}</small>
+                                            @endif
+                                            @if(is_array($action) && isset($action['impact']))
+                                                <br><small class="text-success">📈 Impact: {{ $action['impact'] }}</small>
+                                            @endif
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif
+
+                                <!-- Supplies -->
+                                @if(!empty($insight['supplies']))
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">📦 Persiapan Bahan Baku:</h6>
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Menu</th>
+                                                <th>Level</th>
+                                                <th>Jumlah</th>
+                                                <th>Persentase</th>
+                                                <th>Catatan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($insight['supplies'] as $supply)
+                                            <tr>
+                                                <td><strong>{{ $supply['menu'] }}</strong></td>
+                                                <td>
+                                                    <span class="badge badge-{{ $supply['level'] === 'BANYAK' ? 'danger' : ($supply['level'] === 'NORMAL' ? 'warning' : 'success') }}">
+                                                        {{ $supply['level'] }}
+                                                    </span>
+                                                </td>
+                                                <td>{{ $supply['expected_qty'] }} porsi</td>
+                                                <td>{{ $supply['percentage'] }}</td>
+                                                <td><small>{{ $supply['note'] }}</small></td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <!-- Revenue Predictions -->
     <div class="row">
         <div class="col-12">
@@ -125,6 +220,11 @@
                     </h3>
                 </div>
                 <div class="card-body">
+                    <p class="text-muted small mb-3">
+                        Prediksi pendapatan minggu &amp; bulan depan berdasarkan model forecasting dari data historis order. 
+                        Ubah &#39;Expected Orders&#39; untuk simulasi skenario berbeda. 
+                        Trend analysis menunjukkan arah perubahan pendapatan terbaru (increasing/decreasing).
+                    </p>
                     @if(empty($revenuePredictions))
                         <div class="alert alert-info">
                             <i class="fas fa-info-circle mr-2"></i>
@@ -194,6 +294,144 @@
             </div>
         </div>
     </div>
+
+    <!-- Revenue Decision Support Insights -->
+    @if(!empty($revenueInsights))
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-outline card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Pengambilan Keputusan - Operasional & Staffing
+                    </h3>
+                </div>
+                <div class="card-body">
+                    @foreach($revenueInsights as $insight)
+                        <div class="card mb-3 {{ $insight['priority'] === 'high' ? 'border-danger' : 'border-warning' }}">
+                            <div class="card-header {{ $insight['priority'] === 'high' ? 'bg-danger' : 'bg-warning' }} text-white">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-{{ $insight['type'] === 'revenue_performance' ? 'chart-bar' : ($insight['type'] === 'staffing' ? 'users' : 'cogs') }} mr-2"></i>
+                                    {{ $insight['title'] }}
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <!-- Status Badge -->
+                                @if(isset($insight['status']))
+                                <div class="mb-3">
+                                    <span class="badge badge-{{ 
+                                        $insight['status'] === 'SANGAT BAGUS' ? 'success' : 
+                                        ($insight['status'] === 'BAGUS' ? 'info' : 
+                                        ($insight['status'] === 'MENURUN' ? 'warning' : 'danger'))
+                                    }} p-2">
+                                        📊 Status: {{ $insight['status'] }}
+                                    </span>
+                                </div>
+                                @elseif(isset($insight['summary']))
+                                <div class="mb-3">
+                                    <span class="badge badge-info p-2">
+                                        {{ $insight['summary'] }}
+                                    </span>
+                                </div>
+                                @endif
+
+                                <!-- Reasoning -->
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">💭 Analisis:</h6>
+                                    <p class="text-muted">{{ $insight['reasoning'] }}</p>
+                                </div>
+
+                                <!-- Performance Metrics -->
+                                @if(!empty($insight['performance_metrics']))
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">📈 Metrik Performa:</h6>
+                                    <table class="table table-sm table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Prediksi Hari Ini</strong></td>
+                                                <td>Rp {{ number_format($insight['performance_metrics']['predicted'], 0, ',', '.') }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Rata-rata Historis</strong></td>
+                                                <td>Rp {{ number_format($insight['performance_metrics']['average'], 0, ',', '.') }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Selisih</strong></td>
+                                                <td class="{{ $insight['performance_metrics']['difference'] >= 0 ? 'text-success' : 'text-danger' }}">
+                                                    {{ $insight['performance_metrics']['difference'] >= 0 ? '+' : '' }}Rp {{ number_format($insight['performance_metrics']['difference'], 0, ',', '.') }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Persentase Perubahan</strong></td>
+                                                <td class="{{ $insight['performance_metrics']['percentage_diff'] >= 0 ? 'text-success' : 'text-danger' }}">
+                                                    {{ $insight['performance_metrics']['percentage_diff'] >= 0 ? '+' : '' }}{{ number_format($insight['performance_metrics']['percentage_diff'], 1) }}%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Confidence Range (95%)</strong></td>
+                                                <td>Rp {{ number_format($insight['performance_metrics']['confidence_lower'], 0, ',', '.') }} - Rp {{ number_format($insight['performance_metrics']['confidence_upper'], 0, ',', '.') }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                @endif
+
+                                <!-- Actions -->
+                                @if(!empty($insight['actions']))
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">✅ Rekomendasi Aksi:</h6>
+                                    @foreach($insight['actions'] as $action)
+                                        <div class="alert alert-light border-left border-{{ 
+                                            isset($action['priority']) && $action['priority'] === 'HIGH' ? 'danger' : 'warning'
+                                        }} mb-2">
+                                            <h6 class="mb-2">{{ $action['action'] ?? $action }}</h6>
+                                            @if(is_array($action))
+                                                @if(isset($action['reason']))
+                                                    <small class="text-muted"><strong>Alasan:</strong> {{ $action['reason'] }}</small><br>
+                                                @endif
+                                                @if(isset($action['detail']))
+                                                    <small class="text-muted"><strong>Detail:</strong> {{ $action['detail'] }}</small><br>
+                                                @endif
+                                                @if(isset($action['estimated_staff']))
+                                                    <small class="text-info"><strong>Estimasi Staff:</strong> {{ $action['estimated_staff'] }} orang</small><br>
+                                                @endif
+                                                @if(isset($action['impact']))
+                                                    <small class="text-success"><strong>Impact:</strong> {{ $action['impact'] }}</small><br>
+                                                @endif
+                                                @if(isset($action['price_breakdown']))
+                                                    <small class="text-info"><strong>Breakdown Harga:</strong> {{ $action['price_breakdown'] }}</small><br>
+                                                @endif
+                                                @if(isset($action['note']))
+                                                    <small class="text-warning"><strong>Catatan:</strong> {{ $action['note'] }}</small><br>
+                                                @endif
+                                                @if(isset($action['preparation']))
+                                                    <small class="text-info"><strong>Persiapan:</strong> {{ $action['preparation'] }}</small><br>
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                                @endif
+
+                                <!-- Peak Hours -->
+                                @if(!empty($insight['peak_hours']))
+                                <div class="mb-3">
+                                    <h6 class="font-weight-bold">⏰ Jam-jam Puncak Hari Ini:</h6>
+                                    <div class="btn-group" role="group">
+                                        @foreach($insight['peak_hours'] as $hour)
+                                            <button type="button" class="btn btn-sm btn-outline-primary">{{ $hour }}</button>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 
     <!-- Seasonal Patterns -->
     <div class="row">

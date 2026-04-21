@@ -11,6 +11,8 @@ class MachineLearningDashboard extends Component
     public $revenuePrediction = [];
     public $seasonalPatterns = [];
     public $modelsStatus = [];
+    public $menuInsights = [];
+    public $revenueInsights = [];
     public $isLoading = true;
     public $errorMessage = '';
 
@@ -49,6 +51,18 @@ class MachineLearningDashboard extends Component
                 $this->modelsStatus = $statusResponse->json();
             }
 
+            // Load menu decision insights
+            $menuInsightsResponse = Http::timeout(10)->get('http://127.0.0.1:5003/insights/menu-recommendations');
+            if ($menuInsightsResponse->successful()) {
+                $this->menuInsights = $menuInsightsResponse->json();
+            }
+
+            // Load revenue decision insights
+            $revenueInsightsResponse = Http::timeout(10)->get('http://127.0.0.1:5003/insights/revenue');
+            if ($revenueInsightsResponse->successful()) {
+                $this->revenueInsights = $revenueInsightsResponse->json();
+            }
+
         } catch (\Exception $e) {
             $this->errorMessage = 'Tidak dapat terhubung ke ML Engine. Pastikan service Flask berjalan.';
             \Log::error('ML Dashboard Error: ' . $e->getMessage());
@@ -68,3 +82,4 @@ class MachineLearningDashboard extends Component
         return view('livewire.dashboard.machine-learning-dashboard');
     }
 }
+

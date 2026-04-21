@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Revenue Forecasting Model Training Script
-Train linear regression model to predict daily revenue
+Training linear regression model untuk memprediksi total pendapatan harian berdasarkan data penjualan historis, hari dalam minggu, dan faktor lainnya. Model ini akan digunakan untuk memberikan prediksi
 """
 
 import sys

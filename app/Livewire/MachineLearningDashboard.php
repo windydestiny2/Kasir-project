@@ -18,6 +18,10 @@ class MachineLearningDashboard extends Component
     public $expectedOrders = 0;
     public $selectedMenuId = null;
     public $menuTomorrowPrediction = [];
+    // Decision Support Properties
+    public $menuInsights = [];
+    public $revenueInsights = [];
+    public $dailySummary = [];
 
     public function mount()
     {
@@ -48,6 +52,11 @@ class MachineLearningDashboard extends Component
 
                 // Load model status
                 $this->modelStatus = $this->fetchModelStatus($flaskUrl);
+                
+                // Load decision support insights
+                $this->menuInsights = $this->fetchMenuInsights($flaskUrl);
+                $this->revenueInsights = $this->fetchRevenueInsights($flaskUrl);
+                $this->dailySummary = $this->fetchDailySummary($flaskUrl);
             }
         } catch (\Exception $e) {
             $this->error = 'Failed to load ML data: ' . $e->getMessage();
@@ -134,6 +143,51 @@ class MachineLearningDashboard extends Component
             return [];
         } catch (\Exception $e) {
             Log::error('Failed to fetch model status: ' . $e->getMessage());
+            return [];
+        }
+    }
+
+    private function fetchMenuInsights($baseUrl)
+    {
+        try {
+            $response = Http::timeout(30)->get($baseUrl . '/insights/menu-recommendations');
+            if ($response->successful()) {
+                $data = $response->json();
+                return $data['insights'] ?? [];
+            }
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch menu insights: ' . $e->getMessage());
+            return [];
+        }
+    }
+
+    private function fetchRevenueInsights($baseUrl)
+    {
+        try {
+            $response = Http::timeout(30)->get($baseUrl . '/insights/revenue');
+            if ($response->successful()) {
+                $data = $response->json();
+                return $data['insights'] ?? [];
+            }
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch revenue insights: ' . $e->getMessage());
+            return [];
+        }
+    }
+
+    private function fetchDailySummary($baseUrl)
+    {
+        try {
+            $response = Http::timeout(30)->get($baseUrl . '/insights/daily-summary');
+            if ($response->successful()) {
+                $data = $response->json();
+                return $data['summary'] ?? [];
+            }
+            return [];
+        } catch (\Exception $e) {
+            Log::error('Failed to fetch daily summary: ' . $e->getMessage());
             return [];
         }
     }

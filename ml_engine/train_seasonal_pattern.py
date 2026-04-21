@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Seasonal Pattern Detection Model Training Script
-Train model to detect daily patterns, peak hours, and trends
+Train model untuk mendeteksi pola musiman dalam data penjualan, seperti hari-hari dengan penjualan tinggi atau rendah, 
+dan tren musiman lainnya. Model ini akan digunakan untuk memberikan analisis pola musiman setiap harinya.
 """
 
 import sys

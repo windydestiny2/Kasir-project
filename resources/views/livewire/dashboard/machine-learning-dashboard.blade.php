@@ -99,6 +99,119 @@
             <p class="mt-2">Memuat data Machine Learning...</p>
         </div>
     @else
+        <!-- Decision Support - TOP PRIORITY SECTION -->
+        <div class="row mb-4">
+            <!-- Menu Decision Support -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-purple text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Pengambilan Keputusan - Menu
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        @if(isset($menuInsights['status']) && $menuInsights['status'] == 'success' && isset($menuInsights['insights']) && is_array($menuInsights['insights']) && !empty($menuInsights['insights']))
+                            @foreach($menuInsights['insights'] as $insight)
+                                <div class="mb-4 p-3 border rounded {{ data_get($insight, 'priority') == 'high' ? 'border-danger bg-light-danger' : 'border-info bg-light-info' }}">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <h6 class="mb-0">{{ data_get($insight, 'title', 'Insight') }}</h6>
+                                        <span class="badge badge-{{ data_get($insight, 'priority') == 'high' ? 'danger' : 'info' }}">{{ strtoupper(data_get($insight, 'priority', 'MEDIUM')) }}</span>
+                                    </div>
+                                    <p class="text-muted small mb-2">{{ data_get($insight, 'reasoning') ?? data_get($insight, 'summary') ?? '' }}</p>
+                                    
+                                    @if(isset($insight['actions']) && is_array($insight['actions']))
+                                        <h6 class="text-primary mb-2"><i class="fas fa-list mr-1"></i>Tindakan:</h6>
+                                        <ul class="list-unstyled small">
+                                            @foreach($insight['actions'] as $action)
+                                                <li><i class="fas fa-check text-success mr-1"></i>{{ data_get($action, 'action') ?? (is_array($action) ? data_get($action, 'reason') : $action) ?? $action }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+                                    @if(isset($insight['supplies']) && is_array($insight['supplies']))
+                                        <div class="mt-3 pt-2 border-top">
+                                            <h6 class="text-warning mb-2"><i class="fas fa-warehouse mr-1"></i>Bahan Baku:</h6>
+                                            @foreach($insight['supplies'] as $supply)
+                                                <div class="small">
+                                                    <span class="font-weight-bold">{{ $supply['menu'] }}</span>: 
+                                                    {{ $supply['level'] }} ({{ $supply['expected_qty'] }} porsi)
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                            <div class="mt-3 pt-3 border-top text-right">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock"></i> Diperbarui: {{ now()->format('d/m/Y H:i') }}
+                                </small>
+                            </div>
+                        @else
+                            <div class="text-center py-4">
+                                <i class="fas fa-brain text-info fa-3x mb-3"></i>
+                                <p>Analisis keputusan menu siap digunakan</p>
+                                <small class="text-muted">Pastikan model ML sudah dilatih</small>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Decision Support -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-gavel mr-2"></i>
+                            Pengambilan Keputusan - Pendapatan
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        @if(isset($revenueInsights['status']) && $revenueInsights['status'] == 'success' && isset($revenueInsights['insights']) && is_array($revenueInsights['insights']) && !empty($revenueInsights['insights']))
+                            @foreach($revenueInsights['insights'] as $insight)
+                                <div class="mb-4 p-3 border rounded {{ data_get($insight, 'priority') == 'high' ? 'border-danger bg-light-danger' : 'border-info bg-light-info' }}">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <h6 class="mb-0">{{ data_get($insight, 'title', 'Insight') }}</h6>
+                                        <span class="badge badge-{{ data_get($insight, 'priority') == 'high' ? 'danger' : 'info' }}">{{ strtoupper(data_get($insight, 'priority', 'MEDIUM')) }}</span>
+                                    </div>
+                                    <p class="text-muted small mb-2">{{ data_get($insight, 'reasoning') ?? data_get($insight, 'summary') ?? '' }}</p>
+                                    
+                                    @if(isset($insight['actions']) && is_array($insight['actions']))
+                                        <h6 class="text-primary mb-2"><i class="fas fa-list mr-1"></i>Tindakan:</h6>
+                                        <ul class="list-unstyled small">
+                                            @foreach($insight['actions'] as $action)
+                                                <li><i class="fas fa-check text-success mr-1"></i>{{ data_get($action, 'action') ?? (is_array($action) ? data_get($action, 'reason') : $action) ?? $action }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+                                    @if(isset($insight['peak_hours']))
+                                        <div class="mt-2">
+                                            <h6 class="text-warning mb-1"><i class="fas fa-clock mr-1"></i>Peak Hours:</h6>
+                                            <span class="badge badge-warning">{{ implode(', ', $insight['peak_hours']) }}</span>
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                            <div class="mt-3 pt-3 border-top text-right">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock"></i> Diperbarui: {{ now()->format('d/m/Y H:i') }}
+                                </small>
+                            </div>
+                        @else
+                            <div class="text-center py-4">
+                                <i class="fas fa-balance-scale text-warning fa-3x mb-3"></i>
+                                <p>Analisis keputusan pendapatan siap digunakan</p>
+                                <small class="text-muted">Pastikan model ML sudah dilatih</small>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Menu Recommendations Section -->
         <div class="row mb-4">
             <div class="col-lg-6">
@@ -266,6 +379,58 @@
                                 <small class="text-muted">Jalankan training script untuk mengaktifkan fitur ini</small>
                             </div>
                         @endif
+                    </div>
+                </div>
+
+                Revenue Decision Support
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header bg-warning text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-gavel mr-2"></i>
+                                Pengambilan Keputusan - Pendapatan
+                            </h5>
+                        </div>
+                        <div class="card-body">
+@if(isset($revenueInsights['status']) && $revenueInsights['status'] == 'success' && isset($revenueInsights['insights']) && is_array($revenueInsights['insights']) && !empty($revenueInsights['insights']))
+                            @foreach($revenueInsights['insights'] as $insight)
+                                    <div class="mb-4 p-3 border rounded {{ data_get($insight, 'priority') == 'high' ? 'border-danger bg-light-danger' : 'border-info bg-light-info' }}">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <h6 class="mb-0">{{ data_get($insight, 'title', 'Insight') }}</h6>
+                                            <span class="badge badge-{{ data_get($insight, 'priority') == 'high' ? 'danger' : 'info' }}">{{ strtoupper(data_get($insight, 'priority', 'MEDIUM')) }}</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">{{ data_get($insight, 'reasoning') ?? data_get($insight, 'summary') ?? '' }}</p>
+                                        
+                                        @if(isset($insight['actions']) && is_array($insight['actions']))
+                                            <h6 class="text-primary mb-2"><i class="fas fa-list mr-1"></i>Tindakan:</h6>
+                                            <ul class="list-unstyled small">
+                                                @foreach($insight['actions'] as $action)
+                                                    <li><i class="fas fa-check text-success mr-1"></i>{{ is_array($action) ? ($action['action'] ?? $action['reason'] ?? '') : $action }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+
+                                        @if(isset($insight['peak_hours']))
+                                            <div class="mt-2">
+                                                <h6 class="text-warning mb-1"><i class="fas fa-clock mr-1"></i>Peak Hours:</h6>
+                                                <span class="badge badge-warning">{{ implode(', ', $insight['peak_hours']) }}</span>
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endforeach
+                                <div class="mt-3 pt-3 border-top text-right">
+                                    <small class="text-muted">
+                                        <i class="fas fa-clock"></i> Diperbarui: {{ now()->format('d/m/Y H:i') }}
+                                    </small>
+                                </div>
+                            @else
+                                <div class="text-center py-4">
+                                    <i class="fas fa-balance-scale text-warning fa-3x mb-3"></i>
+                                    <p>Analisis keputusan pendapatan siap digunakan</p>
+                                    <small class="text-muted">Pastikan model ML sudah dilatih</small>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
