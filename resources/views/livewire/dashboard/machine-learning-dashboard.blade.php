@@ -99,11 +99,11 @@
             <p class="mt-2">Memuat data Machine Learning...</p>
         </div>
     @else
-        <!-- Decision Support - TOP PRIORITY SECTION -->
+        <!-- Decision Support - TOP PRIORITY SECTION (3 Cards) -->
         <div class="row mb-4">
             <!-- Menu Decision Support -->
-            <div class="col-lg-6">
-                <div class="card">
+            <div class="col-md-4">
+                <div class="card h-100">
                     <div class="card-header bg-purple text-white">
                         <h5 class="card-title mb-0">
                             <i class="fas fa-lightbulb mr-2"></i>
@@ -159,8 +159,8 @@
             </div>
 
             <!-- Revenue Decision Support -->
-            <div class="col-lg-6">
-                <div class="card">
+            <div class="col-md-4">
+                <div class="card h-100">
                     <div class="card-header bg-warning text-white">
                         <h5 class="card-title mb-0">
                             <i class="fas fa-gavel mr-2"></i>
@@ -204,6 +204,128 @@
                                 <i class="fas fa-balance-scale text-warning fa-3x mb-3"></i>
                                 <p>Analisis keputusan pendapatan siap digunakan</p>
                                 <small class="text-muted">Pastikan model ML sudah dilatih</small>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seasonal/Operational Decision Support (Live Logic) -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            Pengambilan Keputusan - Operasional & Tren
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        @if(isset($seasonalPatterns['status']) && $seasonalPatterns['status'] == 'success')
+                            @php
+                                $insights = [];
+                                $trend_pct = data_get($seasonalPatterns, 'trend_analysis.trend_percentage', 0);
+                                $trend_dir = data_get($seasonalPatterns, 'trend_analysis.trend_direction', 'stable');
+                                $peak_hours = data_get($seasonalPatterns, 'today_analysis.peak_hours', []);
+                                $expected_orders = data_get($seasonalPatterns, 'today_analysis.expected_orders', 0);
+                                
+                                // Trend Insight
+                                if ($trend_pct > 15) {
+                                    $insights[] = [
+                                        'title' => 'Tren Naik Kuat (' . number_format($trend_pct, 1) . '%)',
+                                        'priority' => 'high',
+                                        'reasoning' => "Tren penjualan naik {$trend_pct}%. Maksimalkan revenue opportunity!",
+                                        'actions' => [
+                                            'Tambah 1 staff untuk peak hours ' . implode(', ', $peak_hours),
+                                            'Stok extra 20% menu populer',
+                                            'Promo bundle top performer',
+                                            'Extend jam operasional jika perlu'
+                                        ],
+                                        'peak_hours' => $peak_hours
+                                    ];
+                                } elseif ($trend_pct < -15) {
+                                    $insights[] = [
+                                        'title' => 'Tren Menurun (' . number_format($trend_pct, 1) . '%)',
+                                        'priority' => 'high',
+                                        'reasoning' => "Tren turun {$trend_pct}%. Optimasi cost dulu.",
+                                        'actions' => [
+                                            'Kurangi staff 1 orang atau shift pendek',
+                                            'Fokus menu high-margin',
+                                            'Review pricing low-performer',
+                                            'Kurangi waste ingredients'
+                                        ]
+                                    ];
+                                } else {
+                                    $insights[] = [
+                                        'title' => 'Tren Stabil (' . number_format($trend_pct, 1) . '%)',
+                                        'priority' => 'medium',
+                                        'reasoning' => "Tren stabil. Fokus peak hours: " . implode(', ', $peak_hours) . ". Estimasi {$expected_orders} orders.",
+                                        'actions' => [
+                                            'Pertahankan staffing normal',
+                                            'Siapkan staff ekstra jam ' . implode(', ', $peak_hours),
+                                            'Monitor real-time orders',
+                                            'Inventory sesuai rata-rata'
+                                        ],
+                                        'peak_hours' => $peak_hours
+                                    ];
+                                }
+                                
+                                // Volume Insight
+                                if ($expected_orders > 60) {
+                                    $insights[] = [
+                                        'title' => 'Volume Tinggi: ' . $expected_orders . ' Orders',
+                                        'priority' => 'medium',
+                                        'reasoning' => "Volume order melebihi rata-rata. Siapkan operasional ekstra.",
+                                        'actions' => [
+                                            'Double-check semua inventory',
+                                            'Test kitchen equipment',
+                                            'Extra packaging ready',
+                                            'Backup cashier ready'
+                                        ]
+                                    ];
+                                }
+                            @endphp
+                            
+                            @forelse($insights as $insight)
+                                <div class="mb-4 p-3 border rounded {{ data_get($insight, 'priority') == 'high' ? 'border-danger bg-light-danger' : 'border-info bg-light-info' }}">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <h6 class="mb-0">{{ data_get($insight, 'title') }}</h6>
+                                        <span class="badge badge-{{ data_get($insight, 'priority') == 'high' ? 'danger' : 'info' }} px-2">{{ strtoupper(data_get($insight, 'priority', 'MEDIUM')) }}</span>
+                                    </div>
+                                    <p class="text-muted small mb-2">{{ data_get($insight, 'reasoning') }}</p>
+                                    
+                                    @if(isset($insight['actions']) && is_array($insight['actions']))
+                                        <h6 class="text-primary mb-2"><i class="fas fa-list mr-1"></i>Tindakan:</h6>
+                                        <ul class="list-unstyled small">
+                                            @foreach($insight['actions'] as $action)
+                                                <li><i class="fas fa-check text-success mr-1"></i>{{ $action }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+                                    @if(isset($insight['peak_hours']) && !empty($insight['peak_hours']))
+                                        <div class="mt-2">
+                                            <h6 class="text-warning mb-1"><i class="fas fa-clock mr-1"></i>Peak Hours:</h6>
+                                            <span class="badge badge-warning px-2 py-1">{{ implode(', ', $insight['peak_hours']) }}</span>
+                                        </div>
+                                    @endif
+                                </div>
+                            @empty
+                                <div class="text-center py-4">
+                                    <i class="fas fa-info-circle text-info fa-2x mb-3"></i>
+                                    <p class="text-muted">Data stabil, tidak ada rekomendasi khusus</p>
+                                </div>
+                            @endforelse
+                            
+                            <div class="mt-3 pt-3 border-top text-right">
+                                <small class="text-muted">
+                                    <i class="fas fa-clock"></i> Diperbarui: {{ now()->format('d/m/Y H:i') }}
+                                </small>
+                            </div>
+                        @else
+                            <div class="text-center py-4">
+                                <i class="fas fa-chart-line text-muted fa-3x mb-3"></i>
+                                <p class="text-muted">Model pola musiman belum dilatih</p>
+                                <small class="text-muted">Jalankan training script seasonal_pattern</small>
                             </div>
                         @endif
                     </div>
@@ -381,210 +503,208 @@
                         @endif
                     </div>
                 </div>
-
-
             </div>
-        </div>
 
-        <!-- Seasonal Patterns Section -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header bg-warning text-white">
-                        <h5 class="card-title mb-0">
-                            <i class="fas fa-calendar-alt mr-2"></i>
-                            Analisis Pola Musiman & Tren Penjualan
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        @if(isset($seasonalPatterns['status']) && $seasonalPatterns['status'] == 'success')
-                            <div class="row">
-                                <!-- Today Analysis -->
-                                <div class="col-lg-4">
-                                    <div class="card border-primary">
-                                        <div class="card-header bg-primary text-white">
-                                            <h6 class="mb-0">Analisis Hari Ini</h6>
+            <!-- Seasonal Patterns Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-warning text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Analisis Pola Musiman & Tren Penjualan
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            @if(isset($seasonalPatterns['status']) && $seasonalPatterns['status'] == 'success')
+                                <div class="row">
+                                    <!-- Today Analysis -->
+                                    <div class="col-lg-4">
+                                        <div class="card border-primary">
+                                            <div class="card-header bg-primary text-white">
+                                                <h6 class="mb-0">Analisis Hari Ini</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <strong>{{ $seasonalPatterns['today_analysis']['day_name'] }}</strong>
+                                                </div>
+                                                <div class="row text-center">
+                                                    <div class="col-6">
+                                                        <div class="p-2 bg-light rounded">
+                                                            <div class="font-weight-bold text-primary">
+                                                                {{ $seasonalPatterns['today_analysis']['expected_orders'] }}
+                                                            </div>
+                                                            <small>Estimasi Order</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="p-2 bg-light rounded">
+                                                            <div class="font-weight-bold text-success">
+                                                                Rp {{ number_format($seasonalPatterns['today_analysis']['expected_revenue'], 0, ',', '.') }}
+                                                            </div>
+                                                            <small>Estimasi Revenue</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-clock"></i>
+                                                        Peak Hours: {{ implode(', ', $seasonalPatterns['today_analysis']['peak_hours']) }}
+                                                    </small>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-body">
-                                            <div class="mb-3">
-                                                <strong>{{ $seasonalPatterns['today_analysis']['day_name'] }}</strong>
+                                    </div>
+
+                                    <!-- Best Performing Day -->
+                                    <div class="col-lg-4">
+                                        <div class="card border-success">
+                                            <div class="card-header bg-success text-white">
+                                                <h6 class="mb-0">Hari Terbaik</h6>
                                             </div>
-                                            <div class="row text-center">
-                                                <div class="col-6">
-                                                    <div class="p-2 bg-light rounded">
-                                                        <div class="font-weight-bold text-primary">
-                                                            {{ $seasonalPatterns['today_analysis']['expected_orders'] }}
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <strong>{{ $seasonalPatterns['best_performing_day']['day_name'] }}</strong>
+                                                </div>
+                                                <div class="row text-center">
+                                                    <div class="col-6">
+                                                        <div class="p-2 bg-light rounded">
+                                                            <div class="font-weight-bold text-primary">
+                                                                {{ $seasonalPatterns['best_performing_day']['avg_orders_per_day'] }}
+                                                            </div>
+                                                            <small>Rata-rata Order</small>
                                                         </div>
-                                                        <small>Estimasi Order</small>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="p-2 bg-light rounded">
+                                                            <div class="font-weight-bold text-success">
+                                                                Rp {{ number_format($seasonalPatterns['best_performing_day']['avg_revenue_per_day'], 0, ',', '.') }}
+                                                            </div>
+                                                            <small>Rata-rata Revenue</small>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trend Analysis -->
+                                    <div class="col-lg-4">
+                                        <div class="card border-info">
+                                            <div class="card-header bg-info text-white">
+                                                <h6 class="mb-0">Analisis Tren</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mb-3">
+                                                    <strong class="{{ $seasonalPatterns['trend_analysis']['trend_direction'] == 'up' ? 'text-success' : 'text-danger' }}">
+                                                        Tren {{ $seasonalPatterns['trend_analysis']['trend_direction'] == 'up' ? 'Naik' : 'Turun' }}
+                                                    </strong>
+                                                </div>
+                                                <div class="text-center">
                                                     <div class="p-2 bg-light rounded">
-                                                        <div class="font-weight-bold text-success">
-                                                            Rp {{ number_format($seasonalPatterns['today_analysis']['expected_revenue'], 0, ',', '.') }}
+                                                        <div class="font-weight-bold {{ $seasonalPatterns['trend_analysis']['trend_percentage'] > 0 ? 'text-success' : 'text-danger' }}">
+                                                            {{ number_format($seasonalPatterns['trend_analysis']['trend_percentage'], 1) }}%
                                                         </div>
-                                                        <small>Estimasi Revenue</small>
+                                                        <small>Perubahan dalam {{ $seasonalPatterns['trend_analysis']['analysis_period_days'] }} hari</small>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-3">
-                                                <small class="text-muted">
-                                                    <i class="fas fa-clock"></i>
-                                                    Peak Hours: {{ implode(', ', $seasonalPatterns['today_analysis']['peak_hours']) }}
-                                                </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Best Performing Day -->
-                                <div class="col-lg-4">
-                                    <div class="card border-success">
-                                        <div class="card-header bg-success text-white">
-                                            <h6 class="mb-0">Hari Terbaik</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="mb-3">
-                                                <strong>{{ $seasonalPatterns['best_performing_day']['day_name'] }}</strong>
-                                            </div>
-                                            <div class="row text-center">
-                                                <div class="col-6">
-                                                    <div class="p-2 bg-light rounded">
-                                                        <div class="font-weight-bold text-primary">
-                                                            {{ $seasonalPatterns['best_performing_day']['avg_orders_per_day'] }}
-                                                        </div>
-                                                        <small>Rata-rata Order</small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="p-2 bg-light rounded">
-                                                        <div class="font-weight-bold text-success">
-                                                            Rp {{ number_format($seasonalPatterns['best_performing_day']['avg_revenue_per_day'], 0, ',', '.') }}
-                                                        </div>
-                                                        <small>Rata-rata Revenue</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="mt-3 pt-3 border-top">
+                                    <small class="text-muted">
+                                        <i class="fas fa-clock"></i>
+                                        Terakhir dilatih: {{ \Carbon\Carbon::parse($seasonalPatterns['model_info']['last_trained'])->format('d/m/Y H:i') }}
+                                        | Data Points: {{ $seasonalPatterns['model_info']['data_points'] }}
+                                    </small>
                                 </div>
-
-                                <!-- Trend Analysis -->
-                                <div class="col-lg-4">
-                                    <div class="card border-info">
-                                        <div class="card-header bg-info text-white">
-                                            <h6 class="mb-0">Analisis Tren</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="mb-3">
-                                                <strong class="{{ $seasonalPatterns['trend_analysis']['trend_direction'] == 'up' ? 'text-success' : 'text-danger' }}">
-                                                    Tren {{ $seasonalPatterns['trend_analysis']['trend_direction'] == 'up' ? 'Naik' : 'Turun' }}
-                                                </strong>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="p-2 bg-light rounded">
-                                                    <div class="font-weight-bold {{ $seasonalPatterns['trend_analysis']['trend_percentage'] > 0 ? 'text-success' : 'text-danger' }}">
-                                                        {{ number_format($seasonalPatterns['trend_analysis']['trend_percentage'], 1) }}%
-                                                    </div>
-                                                    <small>Perubahan dalam {{ $seasonalPatterns['trend_analysis']['analysis_period_days'] }} hari</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            @else
+                                <div class="text-center py-4">
+                                    <i class="fas fa-exclamation-triangle text-warning fa-3x mb-3"></i>
+                                    <p>Model analisis pola musiman belum dilatih</p>
+                                    <small class="text-muted">Jalankan training script untuk mengaktifkan fitur ini</small>
                                 </div>
-                            </div>
-
-                            <div class="mt-3 pt-3 border-top">
-                                <small class="text-muted">
-                                    <i class="fas fa-clock"></i>
-                                    Terakhir dilatih: {{ \Carbon\Carbon::parse($seasonalPatterns['model_info']['last_trained'])->format('d/m/Y H:i') }}
-                                    | Data Points: {{ $seasonalPatterns['model_info']['data_points'] }}
-                                </small>
-                            </div>
-                        @else
-                            <div class="text-center py-4">
-                                <i class="fas fa-exclamation-triangle text-warning fa-3x mb-3"></i>
-                                <p>Model analisis pola musiman belum dilatih</p>
-                                <small class="text-muted">Jalankan training script untuk mengaktifkan fitur ini</small>
-                            </div>
-                        @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Models Status Section -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header bg-secondary text-white">
-                        <h5 class="card-title mb-0">
-                            <i class="fas fa-cogs mr-2"></i>
-                            Status Model Machine Learning
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        @if(isset($modelsStatus['models']))
-                            <div class="row">
-                                @foreach($modelsStatus['models'] as $modelName => $status)
-                                    <div class="col-lg-4 mb-3">
-                                        <div class="card {{ $status['status'] == 'trained' ? 'border-success' : 'border-warning' }}">
-                                            <div class="card-body">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div>
-                                                        <h6 class="mb-1">
-                                                            @switch($modelName)
-                                                                @case('menu_recommendation')
-                                                                    Rekomendasi Menu
-                                                                    @break
-                                                                @case('revenue_forecasting')
-                                                                    Prediksi Pendapatan
-                                                                    @break
-                                                                @case('seasonal_pattern')
-                                                                    Pola Musiman
-                                                                    @break
-                                                                @default
-                                                                    {{ ucwords(str_replace('_', ' ', $modelName)) }}
-                                                            @endswitch
-                                                        </h6>
-                                                        <small class="text-muted">
+            <!-- Models Status Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-cogs mr-2"></i>
+                                Status Model Machine Learning
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            @if(isset($modelsStatus['models']))
+                                <div class="row">
+                                    @foreach($modelsStatus['models'] as $modelName => $status)
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card {{ $status['status'] == 'trained' ? 'border-success' : 'border-warning' }}">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <h6 class="mb-1">
+                                                                @switch($modelName)
+                                                                    @case('menu_recommendation')
+                                                                        Rekomendasi Menu
+                                                                        @break
+                                                                    @case('revenue_forecasting')
+                                                                        Prediksi Pendapatan
+                                                                        @break
+                                                                    @case('seasonal_pattern')
+                                                                        Pola Musiman
+                                                                        @break
+                                                                    @default
+                                                                        {{ ucwords(str_replace('_', ' ', $modelName)) }}
+                                                                @endswitch
+                                                            </h6>
+                                                            <small class="text-muted">
+                                                                @if($status['status'] == 'trained')
+                                                                    <i class="fas fa-check-circle text-success"></i>
+                                                                    Dilatih: {{ \Carbon\Carbon::parse($status['last_trained'])->format('d/m/Y H:i') }}
+                                                                @else
+                                                                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                                                                    Belum dilatih
+                                                                @endif
+                                                            </small>
+                                                        </div>
+                                                        <div class="text-right">
                                                             @if($status['status'] == 'trained')
-                                                                <i class="fas fa-check-circle text-success"></i>
-                                                                Dilatih: {{ \Carbon\Carbon::parse($status['last_trained'])->format('d/m/Y H:i') }}
+                                                                <span class="badge badge-success">Active</span>
+                                                                @if(isset($status['data_points']))
+                                                                    <br><small class="text-muted">{{ $status['data_points'] }} data points</small>
+                                                                @endif
+                                                                @if(isset($status['r2_score']))
+                                                                    <br><small class="text-muted">R²: {{ number_format($status['r2_score'], 3) }}</small>
+                                                                @endif
+                                                                @if(isset($status['trend_percentage']))
+                                                                    <br><small class="text-muted">Trend: {{ number_format($status['trend_percentage'], 1) }}%</small>
+                                                                @endif
                                                             @else
-                                                                <i class="fas fa-exclamation-triangle text-warning"></i>
-                                                                Belum dilatih
+                                                                <span class="badge badge-warning">Inactive</span>
                                                             @endif
-                                                        </small>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        @if($status['status'] == 'trained')
-                                                            <span class="badge badge-success">Active</span>
-                                                            @if(isset($status['data_points']))
-                                                                <br><small class="text-muted">{{ $status['data_points'] }} data points</small>
-                                                            @endif
-                                                            @if(isset($status['r2_score']))
-                                                                <br><small class="text-muted">R²: {{ number_format($status['r2_score'], 3) }}</small>
-                                                            @endif
-                                                            @if(isset($status['trend_percentage']))
-                                                                <br><small class="text-muted">Trend: {{ number_format($status['trend_percentage'], 1) }}%</small>
-                                                            @endif
-                                                        @else
-                                                            <span class="badge badge-warning">Inactive</span>
-                                                        @endif
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        @else
-                            <div class="text-center py-4">
-                                <i class="fas fa-spinner fa-spin text-primary fa-3x mb-3"></i>
-                                <p>Memeriksa status model...</p>
-                            </div>
-                        @endif
+                                    @endforeach
+                                </div>
+                            @else
+                                <div class="text-center py-4">
+                                    <i class="fas fa-spinner fa-spin text-primary fa-3x mb-3"></i>
+                                    <p>Memeriksa status model...</p>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
